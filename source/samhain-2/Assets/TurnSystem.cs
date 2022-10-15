@@ -22,4 +22,9 @@ public class TurnSystem : MonoBehaviour
         CurrentTurnIndex = (CurrentTurnIndex + 1) % TurnSequence.Count;
         OnTurnStart.Invoke(currentTurn, TurnSequence[CurrentTurnIndex]);
     }
+
+    public GameObject GetCurrentTurn()
+    {
+        return TurnSequence[CurrentTurnIndex];
+    }
 }

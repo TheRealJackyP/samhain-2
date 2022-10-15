@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,10 +18,13 @@ public class Card : MonoBehaviour
     public bool PlayerAnimationComplete;
     public bool CardAnimationComplete;
 
+    public TMP_Text CostText;
+
     private void Start()
     {
         OnFinishCardAnimation.AddListener(DoFinishPlayerAnimation);
         OnFinishPlayerAnimation.AddListener(DoFinishCardAnimation);
+        CostText.text = Cost.ToString();
     }
 
     private void OnDestroy()

@@ -1,20 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
 public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private static readonly float DropTimeout = 2f;
     public TargetingSystem TargetingSystem;
     public bool dragOnSurfaces = true;
     public Vector3 OriginalPosition;
+    public float LerpSpeed;
 
     private RectTransform m_DraggingPlane;
+
+    private Coroutine MoveToOriginalInstance;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         var canvas = FindInParents<Canvas>(gameObject);
-        if (canvas == null)
+        if (canvas == null || MoveToOriginalInstance is not null)
             return;
 
         // We have clicked something that can be dragged.
@@ -43,7 +48,26 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         else if (card is TargetedCard targetedCard && TargetingSystem.ActiveTarget != null)
             targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn);
 
-        GetComponent<RectTransform>().position = OriginalPosition;
+        if (MoveToOriginalInstance is not null)
+            StopCoroutine(MoveToOriginalInstance);
+
+        MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
+    }
+
+    public IEnumerator LerpToTargetPosition(Vector3 targetPosition)
+    {
+        var rect = GetComponent<RectTransform>();
+        var elapsedTime = 0f;
+        while (Vector3.Distance(rect.transform.position, targetPosition) > .01f && elapsedTime < DropTimeout)
+        {
+            rect.transform.position =
+                Vector3.MoveTowards(rect.transform.position, targetPosition, LerpSpeed * Time.deltaTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        rect.transform.position = targetPosition;
+        MoveToOriginalInstance = null;
     }
 
     private void SetDraggedPosition(PointerEventData data)

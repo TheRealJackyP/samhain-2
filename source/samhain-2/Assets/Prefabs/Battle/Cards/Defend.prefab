@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: LerpSpeed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: Cost
       value: 1
@@ -15,6 +19,10 @@ PrefabInstance:
       propertyPath: IntData
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: CostText
+      value: 
+      objectReference: {fileID: 7523773352987898351}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: CardAnimationComplete
       value: 1
@@ -168,5 +176,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 105a34616d227e9419881ed62506068c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7523773352987898351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 595393888, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+  m_PrefabInstance: {fileID: 7523773352395689103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

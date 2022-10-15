@@ -10,6 +10,7 @@ public class EntityHealth : MonoBehaviour
 
     public UnityEvent<GameObject> OnEntityDeath = new();
     public UnityEvent<GameObject> OnArmorBreak = new();
+    public UnityEvent<GameObject> OnArmorGain = new();
 
     public int CurrentHealth
     {
@@ -27,6 +28,8 @@ public class EntityHealth : MonoBehaviour
         get => _armor;
         set
         {
+            if (_armor == 0 && value != 0)
+                OnArmorGain.Invoke(gameObject);
             _armor = value;
             if (_armor == 0)
                 OnArmorBreak.Invoke(gameObject);

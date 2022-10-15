@@ -1,0 +1,61 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using Unity.Burst.Intrinsics;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
+public class EntityStatusUI : MonoBehaviour
+{
+    [FormerlySerializedAs("Text")] public TMP_Text HealthText;
+    public TMP_Text ArmorText;
+    public GameObject ArmorPanel;
+
+    public EntityHealth TargetHealth;
+
+    public Scrollbar HealthBar;
+
+    private UnityAction<GameObject> EnableArmorAction;
+    private UnityAction<GameObject> DisableArmorAction;
+    private Camera _camera;
+
+    private void Start()
+    {
+        _camera = Camera.main;
+        EnableArmorAction = _ => EnableArmorUI();
+        DisableArmorAction = _ => DisableArmorUI();
+        TargetHealth.OnArmorGain.AddListener(EnableArmorAction);
+        TargetHealth.OnArmorBreak.AddListener(DisableArmorAction);
+        if (TargetHealth.Armor <= 0)
+        {
+            DisableArmorUI();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        TargetHealth.OnArmorGain.RemoveListener(EnableArmorAction);
+        TargetHealth.OnArmorBreak.RemoveListener(DisableArmorAction);
+    }
+
+    public void EnableArmorUI()
+    {
+        ArmorPanel.gameObject.SetActive(true);
+    }
+
+    public void DisableArmorUI()
+    {
+        ArmorPanel.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        HealthText.text = TargetHealth.CurrentHealth + "/" + TargetHealth.BaseHealth;
+        ArmorText.text = TargetHealth.Armor.ToString();
+        HealthBar.size = Mathf.Clamp01((float)TargetHealth.CurrentHealth / TargetHealth.BaseHealth);
+        transform.position = _camera.WorldToScreenPoint(TargetHealth.transform.position);
+    }
+}
