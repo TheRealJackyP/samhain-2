@@ -18,7 +18,7 @@ public class EntityHealth : MonoBehaviour
         set
         {
             _currentHealth = value;
-            if (_currentHealth == 0)
+            if (_currentHealth <= 0)
                 OnEntityDeath.Invoke(gameObject);
         }
     }
@@ -31,7 +31,7 @@ public class EntityHealth : MonoBehaviour
             if (_armor == 0 && value != 0)
                 OnArmorGain.Invoke(gameObject);
             _armor = value;
-            if (_armor == 0)
+            if (_armor <= 0)
                 OnArmorBreak.Invoke(gameObject);
         }
     }
@@ -44,14 +44,21 @@ public class EntityHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         var unblocked = amount;
-        if (amount > Armor)
+        if (amount > Armor && Armor > 0)
         {
             unblocked -= Armor;
             Armor = 0;
             CurrentHealth = Math.Clamp(CurrentHealth - unblocked, 0, BaseHealth);
         }
+        else if (Armor > 0)
+        {
+            Armor =  Math.Clamp(Armor - unblocked, 0, Armor);
+        }
 
-        Armor -= amount;
+        else
+        {
+            CurrentHealth = Math.Clamp(CurrentHealth - unblocked, 0, BaseHealth);
+        }
     }
 
     public void ResetHealth()

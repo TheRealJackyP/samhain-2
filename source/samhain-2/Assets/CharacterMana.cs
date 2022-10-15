@@ -15,6 +15,14 @@ public class CharacterMana : MonoBehaviour
     {
         CurrentMana = MaxMana;
     }
+    
+    public void RefillManaStartTurn(GameObject pastTurn, GameObject currentTurn)
+    {
+        if (currentTurn == gameObject)
+        {
+           RefillMana();
+        }
+    } 
 
     public void AddMana(int amount, bool overfill = false)
     {

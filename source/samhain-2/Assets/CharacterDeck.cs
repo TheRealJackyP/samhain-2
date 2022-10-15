@@ -33,6 +33,10 @@ public class CharacterDeck : MonoBehaviour
     public GameObject HandParent;
     public GameObject DiscardPileParent;
 
+    public TargetingSystem TargetingSystem;
+
+    public int CardsToRetry;
+    
     private void Start()
     {
         Initialize();
@@ -44,6 +48,8 @@ public class CharacterDeck : MonoBehaviour
         {
             DrawPile = DrawPile.Select(element => Instantiate(element, DrawPileParent.transform)).ToList();
             DrawPile.RandomShuffle();
+            DrawPile.ForEach(element => element.GetComponent<Dragger>().TargetingSystem = TargetingSystem);
+            DrawPile.ForEach(element => element.GetComponent<Card>().OwnerDeck = this);
             Initalized = true;
         }
     }
@@ -61,7 +67,7 @@ public class CharacterDeck : MonoBehaviour
             if (DrawPile.Any())
             {
                 var nextCard = DrawPile.First(); 
-                Hand.Append(nextCard);
+                Hand.Add(nextCard);
                 DrawPile.Remove(nextCard);
                 OnDrawSuccess.Invoke(nextCard);
                 nextCard.transform.SetParent(HandParent.transform);
@@ -73,16 +79,8 @@ public class CharacterDeck : MonoBehaviour
 
             else
             {
-                ShuffleDeck();
-                var nextCard = DrawPile.First(); 
-                Hand.Append(nextCard);
-                DrawPile.Remove(nextCard);
-                OnDrawSuccess.Invoke(nextCard);
-                nextCard.transform.SetParent(HandParent.transform);
-                nextCard.transform.localPosition = Vector3.zero;
-                nextCard.transform.localScale = Vector3.one;
-                nextCard.gameObject.SetActive(true);
-                return true;
+                // ShuffleDeck();
+                return false;
             }
             
         }
@@ -90,11 +88,41 @@ public class CharacterDeck : MonoBehaviour
 
     public void DrawCards(int number)
     {
-        foreach (var _ in Enumerable.Range(0, number).ToList())
+        var remaining = number;
+        if (remaining <= DrawPile.Count)
         {
-            if(!DrawCard())
-                break;
+            foreach (var _ in Enumerable.Range(0, remaining).ToList())
+            {
+                if(!DrawCard())
+                    throw new Exception("Did some bad math calculating draw amounts!");
+            }
+
+            return;
         }
+
+        else
+        {
+            remaining -= DrawPile.Count;
+            foreach (var _ in Enumerable.Range(0, DrawPile.Count))
+            {
+                if(!DrawCard())
+                    throw new Exception("Did some bad math calculating draw amounts!");
+            }
+        }
+
+        if (remaining > DiscardPile.Count)
+        {
+            ShuffleDeck(DiscardPile.Count);
+            return;
+        }
+
+        else
+        {
+            ShuffleDeck(remaining);
+            return;
+        }
+
+
     }
 
     public void DrawCardsStartTurn(GameObject pastTurn, GameObject currentTurn)
@@ -122,11 +150,15 @@ public class CharacterDeck : MonoBehaviour
         {
             throw new Exception("Tried to discard a card not in hand!");
         }
+
+        var cardData = card.GetComponent<Card>();
+        cardData.CardAnimationComplete = false;
+        cardData.PlayerAnimationComplete = false;
         
         OnDiscardCard.Invoke(card, endOfTurn);
         Hand.Remove(card);
         DiscardPile.Add(card);
-        card.transform.parent = DiscardPileParent.transform;
+        card.transform.SetParent(DiscardPileParent.transform);
         card.gameObject.SetActive(false);
     }
 
@@ -160,10 +192,10 @@ public class CharacterDeck : MonoBehaviour
         targetCards.ToList().ForEach(target => DiscardCard(target, endOfTurn, ignoreFailure));
     }
     
-    public void DiscardMultipleCards(IEnumerable<int> targetCardIndices, bool endOfTurn = false, bool ignoreFailure = false)
-    {
-        targetCardIndices.ToList().ForEach(targetIndex => DiscardCard(targetIndex, endOfTurn, ignoreFailure));
-    }
+    // public void DiscardMultipleCards(IEnumerable<int> targetCardIndices, bool endOfTurn = false, bool ignoreFailure = false)
+    // {
+    //     targetCardIndices.ToList().ForEach(targetIndex => DiscardCard(targetIndex, endOfTurn, ignoreFailure));
+    // }
 
     public void DiscardMultipleRandomCards(int number, bool endOfTurn = false, bool ignoreFailure = false)
     {
@@ -172,18 +204,18 @@ public class CharacterDeck : MonoBehaviour
 
     public void DiscardAll(bool endOfTurn = false, bool ignoreFailure = false)
     {
-        Enumerable.Range(0, Hand.Count).ToList().ForEach(index => DiscardCard(index, endOfTurn, ignoreFailure));
+        Enumerable.Range(0, Hand.Count).ToList().ForEach(index => DiscardCard(0, endOfTurn, ignoreFailure));
     }
 
-    public void ShuffleDeck()
+    public void ShuffleDeck(int number = 0)
     {
         if(WaitForShuffleAnimationInstance is not null)
             StopCoroutine(WaitForShuffleAnimationInstance);
 
-        WaitForShuffleAnimationInstance = StartCoroutine(DoWaitForShuffleAnimation());
+        WaitForShuffleAnimationInstance = StartCoroutine(DoWaitForShuffleAnimation(number));
     }
 
-    public IEnumerator DoWaitForShuffleAnimation()
+    public IEnumerator DoWaitForShuffleAnimation(int number = 0)
     {
         ShuffleAnimationCompleted = false;
         OnShuffleDeck.Invoke(gameObject);
@@ -196,11 +228,12 @@ public class CharacterDeck : MonoBehaviour
         DiscardPile.Clear();
         DrawPile.RandomShuffle();
         DrawPile.ForEach(card => ResolveShuffle(card));
+        DrawCards(number);
     }
 
     public void ResolveShuffle(GameObject card)
     {
-        card.transform.parent = DrawPileParent.transform;
+        card.transform.SetParent(DrawPileParent.transform);
         card.gameObject.SetActive(false);
     }
 

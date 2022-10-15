@@ -1,5 +1,100 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &62172966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62172967}
+  m_Layer: 6
+  m_Name: Discard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &62172967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62172966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 486013019}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &486013018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486013019}
+  m_Layer: 6
+  m_Name: Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486013019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486013018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 779421707}
+  - {fileID: 62172967}
+  m_Father: {fileID: 2633133526399942028}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &779421706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779421707}
+  m_Layer: 6
+  m_Name: Draw
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &779421707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779421706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 486013019}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5917774929369080480
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +109,7 @@ GameObject:
   - component: {fileID: 1634620314824641795}
   - component: {fileID: 1634620314824641799}
   - component: {fileID: 1634620314824641801}
+  - component: {fileID: 1634620314824641802}
   m_Layer: 6
   m_Name: Hermes
   m_TagString: Untagged
@@ -32,7 +128,8 @@ Transform:
   m_LocalPosition: {x: -3.23, y: 1.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 486013019}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,7 +172,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 246034841
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,6 +232,9 @@ MonoBehaviour:
   OnArmorBreak:
     m_PersistentCalls:
       m_Calls: []
+  OnArmorGain:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1634620314824641799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +262,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentMana: 0
   MaxMana: 3
+--- !u!114 &1634620314824641802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917774929369080480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff009da7ee350284ea9e6fc601e2441a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawPile:
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  Hand: []
+  DiscardPile: []
+  CardDrawStartofTurn: 5
+  MaxHandSize: 10
+  OnDrawFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrawSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShuffleDeck:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShuffleDeckAnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDiscardCard:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartEndOfTurnDiscard:
+    m_PersistentCalls:
+      m_Calls: []
+  ShuffleAnimationCompleted: 0
+  Initalized: 0
+  DrawPileParent: {fileID: 779421706}
+  HandParent: {fileID: 0}
+  DiscardPileParent: {fileID: 62172966}
+  TargetingSystem: {fileID: 0}
+  CardsToRetry: 0

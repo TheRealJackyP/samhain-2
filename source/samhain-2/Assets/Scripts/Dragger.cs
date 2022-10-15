@@ -43,11 +43,31 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     {
         var card = GetComponent<Card>();
         if (card is UntargetedCard)
-            card.TryPlayCard(card.gameObject, TargetingSystem.ActiveTurn, TargetingSystem.ActiveTurn);
+        {
+            if (!card.TryPlayCard(card.gameObject, TargetingSystem.ActiveTurn, TargetingSystem.ActiveTurn))
+            {
+                if (MoveToOriginalInstance is not null)
+                    StopCoroutine(MoveToOriginalInstance);
+
+                MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
+            }
+            
+            return;
+        }
+            
 
         else if (card is TargetedCard targetedCard && TargetingSystem.ActiveTarget != null)
-            targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn);
+        {
+            if (!targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn))
+            {
+                if (MoveToOriginalInstance is not null)
+                    StopCoroutine(MoveToOriginalInstance);
 
+                MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
+            }
+            return;
+        }
+        
         if (MoveToOriginalInstance is not null)
             StopCoroutine(MoveToOriginalInstance);
 

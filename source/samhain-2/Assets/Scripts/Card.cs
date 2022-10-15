@@ -18,6 +18,8 @@ public class Card : MonoBehaviour
     public bool PlayerAnimationComplete;
     public bool CardAnimationComplete;
 
+    public CharacterDeck OwnerDeck;
+
     public TMP_Text CostText;
 
     private void Start()
@@ -33,14 +35,14 @@ public class Card : MonoBehaviour
         OnFinishPlayerAnimation.RemoveListener(DoFinishCardAnimation);
     }
 
-    public virtual void TryPlayCard(GameObject card, GameObject target, GameObject player)
+    public virtual bool TryPlayCard(GameObject card, GameObject target, GameObject player)
     {
         var playerMana = player.GetComponent<CharacterMana>();
         var cardData = card.GetComponent<Card>();
         if (playerMana.CurrentMana < cardData.Cost)
         {
             OnFailPlayCard.Invoke(card, target, player);
-            return;
+            return false;
         }
 
         playerMana.CurrentMana -= cardData.Cost;
@@ -49,6 +51,7 @@ public class Card : MonoBehaviour
         OnStartCardAnimation.Invoke(card, target, player);
         OnFinishCardAnimation.Invoke(card, target, player);
         OnFinishPlayerAnimation.Invoke(card, target, player);
+        return true;
     }
 
     public virtual void DoFinishPlayerAnimation(GameObject card, GameObject target, GameObject player)
@@ -66,6 +69,6 @@ public class Card : MonoBehaviour
     public virtual void FinishPlayingCard(GameObject card, GameObject target, GameObject player)
     {
         if (PlayerAnimationComplete && CardAnimationComplete)
-            Destroy(gameObject);
+            OwnerDeck.DiscardCard(gameObject);
     }
 }
