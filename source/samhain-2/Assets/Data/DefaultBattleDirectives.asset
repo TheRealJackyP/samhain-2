@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa342120f314ed9a8426b94386aadda, type: 3}
+  m_Name: DefaultBattleDirectives
+  m_EditorClassIdentifier: 
+  Characters:
+  - {fileID: 5917774929369080480, guid: 0b1dfa9a1d6c87e4f9cccf9ec82f9671, type: 3}
+  - {fileID: 2855266622465813741, guid: 06abb321434775743b0d6190f13cbee5, type: 3}
+  CharacterHealth:
+    m_keys:
+    - Hermes
+    - Charon
+    m_values: 1e00000032000000
+  CharacterDecks:
+    m_keys:
+    - Hermes
+    - Charon
+    m_values:
+    - {fileID: 11400000, guid: b147462773cb8ef4ab158a37eb8f54c1, type: 2}
+    - {fileID: 11400000, guid: ba6624e2a108fb5489220434c1c26886, type: 2}
+  Enemies:
+  - {fileID: 7455253060459129129, guid: 797e2a779ac05394387caecf0944b0b8, type: 3}
+  - {fileID: 7455253060459129129, guid: 797e2a779ac05394387caecf0944b0b8, type: 3}
+  - {fileID: 7455253060459129129, guid: 797e2a779ac05394387caecf0944b0b8, type: 3}
