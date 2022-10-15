@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public static GameObject DragTarget;
     private static readonly float DropTimeout = 2f;
     public TargetingSystem TargetingSystem;
     public bool dragOnSurfaces = true;
@@ -18,6 +19,9 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if ((DragTarget != null) && DragTarget != gameObject)
+            return;
+        DragTarget = gameObject;
         var canvas = FindInParents<Canvas>(gameObject);
         if (canvas == null || MoveToOriginalInstance is not null)
             return;
@@ -36,11 +40,16 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     public void OnDrag(PointerEventData data)
     {
+        if ((DragTarget != null) && DragTarget != gameObject)
+            return;
         SetDraggedPosition(data);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if ((DragTarget != null) && DragTarget != gameObject)
+            return;
+        
         var card = GetComponent<Card>();
         if (card is UntargetedCard)
         {
@@ -51,7 +60,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
                 MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
             }
-
+            DragTarget = null;
             return;
         }
 
@@ -64,8 +73,14 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                     StopCoroutine(MoveToOriginalInstance);
 
                 MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
+                DragTarget = null;
+                return;
             }
+            
+            if (MoveToOriginalInstance is not null)
+                StopCoroutine(MoveToOriginalInstance);
 
+            MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(TargetingSystem.ActiveCardAnchor.transform.position));
             return;
         }
 
@@ -73,6 +88,16 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             StopCoroutine(MoveToOriginalInstance);
 
         MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
+        DragTarget = null;
+    }
+
+    public void ReturnToOriginalPosition()
+    {
+        if (MoveToOriginalInstance is not null)
+            StopCoroutine(MoveToOriginalInstance);
+
+        MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
+        DragTarget = null;
     }
 
     public IEnumerator LerpToTargetPosition(Vector3 targetPosition)

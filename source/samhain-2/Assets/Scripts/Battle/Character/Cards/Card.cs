@@ -29,7 +29,7 @@ public class Card : MonoBehaviour
         CostText.text = Cost.ToString();
     }
 
-    private void OnDestroy()
+    public virtual void OnDestroy()
     {
         OnFinishCardAnimation.RemoveListener(DoFinishPlayerAnimation);
         OnFinishPlayerAnimation.RemoveListener(DoFinishCardAnimation);
