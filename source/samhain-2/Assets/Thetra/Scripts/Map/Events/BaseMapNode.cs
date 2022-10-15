@@ -15,25 +15,14 @@ public class BaseMapNode : MonoBehaviour
     public GameObject[] unlockedNodes;
     public GameObject[] lockedNodes;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip NodeSelectSFX;
+
+
+
     private void Start()
     {
         MapManager.instance.AllNodes.Add(gameObject);
-        //if (StartNode)
-        //{
-        //    Cam.instance.node = CurserPos;
-        //    for (int i = 0; i < unlockedNodes.Length; i++)
-        //    {
-
-        //        if (unlockedNodes[i].GetComponent<Node_Battle>() != null)
-        //            unlockedNodes[i].GetComponent<Node_Battle>().Unlocked = true;
-
-        //        if (unlockedNodes[i].GetComponent<Node_Event>() != null)
-        //            unlockedNodes[i].GetComponent<Node_Event>().Unlocked = true;
-
-        //        if (unlockedNodes[i].GetComponent<Node_Rest>() != null)
-        //            unlockedNodes[i].GetComponent<Node_Rest>().Unlocked = true;
-        //    }
-        //}
         if(MapManager.instance.CurrentNode == GetComponent<NodeID>().ID)
         {
             picked = true;
@@ -52,6 +41,9 @@ public class BaseMapNode : MonoBehaviour
         if (!picked)
         {
             Node();
+
+            AudioManager.Instance.PlaySFX(NodeSelectSFX);
+
             MapManager.instance.id.Add(GetComponent<NodeID>().ID);
             MapManager.instance.CurrentNode = GetComponent<NodeID>().ID;
             picked = true;
