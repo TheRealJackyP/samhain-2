@@ -33,11 +33,13 @@ public class CharacterDeck : MonoBehaviour
 
     public int CardsToRetry;
 
+    public bool WaitForShuffleAnimation;
+
     public Coroutine WaitForShuffleAnimationInstance;
 
     private void Start()
     {
-        if(DrawPile.Any())
+        if (DrawPile.Any())
             Initialize();
     }
 
@@ -185,7 +187,7 @@ public class CharacterDeck : MonoBehaviour
     {
         ShuffleAnimationCompleted = false;
         OnShuffleDeck.Invoke(gameObject);
-        while (!ShuffleAnimationCompleted) yield return null;
+        while (!ShuffleAnimationCompleted && WaitForShuffleAnimation) yield return null;
 
         DrawPile.AddRange(DiscardPile);
         DiscardPile.Clear();

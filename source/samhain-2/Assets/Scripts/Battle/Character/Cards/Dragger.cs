@@ -19,7 +19,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if ((DragTarget != null) && DragTarget != gameObject)
+        if (DragTarget != null && DragTarget != gameObject)
             return;
         DragTarget = gameObject;
         var canvas = FindInParents<Canvas>(gameObject);
@@ -40,16 +40,16 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     public void OnDrag(PointerEventData data)
     {
-        if ((DragTarget != null) && DragTarget != gameObject)
+        if (DragTarget != null && DragTarget != gameObject)
             return;
         SetDraggedPosition(data);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if ((DragTarget != null) && DragTarget != gameObject)
+        if (DragTarget != null && DragTarget != gameObject)
             return;
-        
+
         var card = GetComponent<Card>();
         if (card is UntargetedCard)
         {
@@ -60,12 +60,13 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
                 MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
             }
+
             DragTarget = null;
             return;
         }
 
 
-        if (card is TargetedCard targetedCard && TargetingSystem.ActiveTarget != null)
+        if (card is TargetedCard targetedCard)
         {
             if (!targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn))
             {
@@ -76,11 +77,12 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                 DragTarget = null;
                 return;
             }
-            
+
             if (MoveToOriginalInstance is not null)
                 StopCoroutine(MoveToOriginalInstance);
 
-            MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(TargetingSystem.ActiveCardAnchor.transform.position));
+            MoveToOriginalInstance =
+                StartCoroutine(LerpToTargetPosition(TargetingSystem.ActiveCardAnchor.transform.position));
             return;
         }
 

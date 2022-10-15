@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,8 +13,8 @@ public class TurnSystem : MonoBehaviour
 
     public void Start()
     {
-        if(TurnSequence.Any())
-            Init();
+        // if(TurnSequence.Any())
+        //     Init();
     }
 
     public void Init()
@@ -28,6 +27,12 @@ public class TurnSystem : MonoBehaviour
         var currentTurn = TurnSequence[CurrentTurnIndex];
         OnTurnEnd.Invoke(TurnSequence[CurrentTurnIndex]);
         CurrentTurnIndex = (CurrentTurnIndex + 1) % TurnSequence.Count;
+        for (var i = 0; i <= TurnSequence.Count && !TurnSequence[CurrentTurnIndex].activeSelf; ++i)
+        {
+            if (i == TurnSequence.Count) throw new Exception("Unable to start a turn!");
+            CurrentTurnIndex = (CurrentTurnIndex + 1) % TurnSequence.Count;
+        }
+
         OnTurnStart.Invoke(currentTurn, TurnSequence[CurrentTurnIndex]);
     }
 

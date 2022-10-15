@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
 
     public TMP_Text CostText;
 
-    private void Start()
+    public virtual void Start()
     {
         OnFinishCardAnimation.AddListener(DoFinishPlayerAnimation);
         OnFinishPlayerAnimation.AddListener(DoFinishCardAnimation);

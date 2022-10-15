@@ -34,6 +34,7 @@ public class EntityStatusUI : MonoBehaviour
         ArmorText.text = TargetHealth.Armor.ToString();
         HealthBar.size = Mathf.Clamp01((float) TargetHealth.CurrentHealth / TargetHealth.BaseHealth);
         transform.position = _camera.WorldToScreenPoint(TargetHealth.transform.position);
+        if (!TargetHealth.gameObject.activeSelf) gameObject.SetActive(false);
     }
 
     private void OnDestroy()

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,22 +11,27 @@ public class TargetingSystem : MonoBehaviour
     public UnityEvent<GameObject> OnTargetClicked = new();
     public UnityEvent<GameObject> OnTargetUnClicked = new();
 
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && ActiveTarget != null && ActiveCard != null)
+        {
+            var cardData = ActiveCard.GetComponent<TargetedCard>();
+
+            if (cardData)
+                if (cardData.TargetingFilter == (cardData.TargetingFilter | (1 << ActiveTarget.layer)))
+                    OnTargetClicked.Invoke(ActiveTarget);
+        }
+
+        else if (Input.GetMouseButtonDown(1) && ActiveCard != null)
+        {
+            OnTargetUnClicked.Invoke(ActiveCard);
+            ActiveCard = null;
+        }
+    }
+
     public void UpdateTurn(GameObject LastTurn, GameObject NextTurn)
     {
         ActiveTarget = null;
         ActiveTurn = NextTurn;
-    }
-
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(0) && ActiveTarget is not null)
-        {
-            OnTargetClicked.Invoke(ActiveTarget);
-        }
-        
-        else if (Input.GetMouseButtonDown(1) && ActiveTarget is not null)
-        {
-            OnTargetUnClicked.Invoke(ActiveCard);
-        }
     }
 }

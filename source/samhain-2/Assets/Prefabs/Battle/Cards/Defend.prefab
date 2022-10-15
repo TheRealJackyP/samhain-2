@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: LerpSpeed
-      value: 400
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: Cost
