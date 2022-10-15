@@ -7,6 +7,7 @@ public class EntityHealth : MonoBehaviour
     public int BaseHealth = 100;
     public int _currentHealth = 100;
     public int _armor;
+    public string EntityName;
 
     public UnityEvent<GameObject> OnEntityDeath = new();
     public UnityEvent<GameObject> OnArmorBreak = new();
@@ -36,10 +37,10 @@ public class EntityHealth : MonoBehaviour
         }
     }
 
-    public void Start()
-    {
-        ResetHealth();
-    }
+    // public void Start()
+    // {
+    //     ResetHealth();
+    // }
 
     public void TakeDamage(int amount)
     {
@@ -52,7 +53,7 @@ public class EntityHealth : MonoBehaviour
         }
         else if (Armor > 0)
         {
-            Armor =  Math.Clamp(Armor - unblocked, 0, Armor);
+            Armor = Math.Clamp(Armor - unblocked, 0, Armor);
         }
 
         else

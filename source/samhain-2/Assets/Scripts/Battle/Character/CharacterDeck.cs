@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
-
 
 public class CharacterDeck : MonoBehaviour
 {
@@ -24,8 +22,6 @@ public class CharacterDeck : MonoBehaviour
     public UnityEvent<GameObject, bool> OnDiscardCard = new();
     public UnityEvent<GameObject> OnStartEndOfTurnDiscard = new();
 
-    public Coroutine WaitForShuffleAnimationInstance;
-
     public bool ShuffleAnimationCompleted;
     public bool Initalized;
 
@@ -36,10 +32,13 @@ public class CharacterDeck : MonoBehaviour
     public TargetingSystem TargetingSystem;
 
     public int CardsToRetry;
-    
+
+    public Coroutine WaitForShuffleAnimationInstance;
+
     private void Start()
     {
-        Initialize();
+        if(DrawPile.Any())
+            Initialize();
     }
 
     public void Initialize()
@@ -56,34 +55,27 @@ public class CharacterDeck : MonoBehaviour
 
     public bool DrawCard()
     {
-        if ((Hand.Count >= MaxHandSize) || !DrawPile.Any() && !DiscardPile.Any())
+        if (Hand.Count >= MaxHandSize || (!DrawPile.Any() && !DiscardPile.Any()))
         {
             OnDrawFailed.Invoke(gameObject);
             return false;
         }
 
-        else
+        if (DrawPile.Any())
         {
-            if (DrawPile.Any())
-            {
-                var nextCard = DrawPile.First(); 
-                Hand.Add(nextCard);
-                DrawPile.Remove(nextCard);
-                OnDrawSuccess.Invoke(nextCard);
-                nextCard.transform.SetParent(HandParent.transform);
-                nextCard.transform.localPosition = Vector3.zero;
-                nextCard.transform.localScale = Vector3.one;
-                nextCard.gameObject.SetActive(true);
-                return true;
-            }
-
-            else
-            {
-                // ShuffleDeck();
-                return false;
-            }
-            
+            var nextCard = DrawPile.First();
+            Hand.Add(nextCard);
+            DrawPile.Remove(nextCard);
+            OnDrawSuccess.Invoke(nextCard);
+            nextCard.transform.SetParent(HandParent.transform);
+            nextCard.transform.localPosition = Vector3.zero;
+            nextCard.transform.localScale = Vector3.one;
+            nextCard.gameObject.SetActive(true);
+            return true;
         }
+
+        // ShuffleDeck();
+        return false;
     }
 
     public void DrawCards(int number)
@@ -92,23 +84,16 @@ public class CharacterDeck : MonoBehaviour
         if (remaining <= DrawPile.Count)
         {
             foreach (var _ in Enumerable.Range(0, remaining).ToList())
-            {
-                if(!DrawCard())
+                if (!DrawCard())
                     throw new Exception("Did some bad math calculating draw amounts!");
-            }
 
             return;
         }
 
-        else
-        {
-            remaining -= DrawPile.Count;
-            foreach (var _ in Enumerable.Range(0, DrawPile.Count))
-            {
-                if(!DrawCard())
-                    throw new Exception("Did some bad math calculating draw amounts!");
-            }
-        }
+        remaining -= DrawPile.Count;
+        foreach (var _ in Enumerable.Range(0, DrawPile.Count))
+            if (!DrawCard())
+                throw new Exception("Did some bad math calculating draw amounts!");
 
         if (remaining > DiscardPile.Count)
         {
@@ -116,13 +101,7 @@ public class CharacterDeck : MonoBehaviour
             return;
         }
 
-        else
-        {
-            ShuffleDeck(remaining);
-            return;
-        }
-
-
+        ShuffleDeck(remaining);
     }
 
     public void DrawCardsStartTurn(GameObject pastTurn, GameObject currentTurn)
@@ -132,29 +111,25 @@ public class CharacterDeck : MonoBehaviour
             Initialize();
             DrawCards(CardDrawStartofTurn);
         }
-            
     }
 
     public void DiscardEndOfTurn(GameObject endingTurn)
     {
         if (endingTurn != gameObject)
             return;
-        
+
         OnStartEndOfTurnDiscard.Invoke(gameObject);
-        DiscardAll(true, false);
+        DiscardAll(true);
     }
 
     public void DiscardCard(GameObject card, bool endOfTurn = false, bool ignoreFailure = false)
     {
-        if (!Hand.Contains(card) && !ignoreFailure)
-        {
-            throw new Exception("Tried to discard a card not in hand!");
-        }
+        if (!Hand.Contains(card) && !ignoreFailure) throw new Exception("Tried to discard a card not in hand!");
 
         var cardData = card.GetComponent<Card>();
         cardData.CardAnimationComplete = false;
         cardData.PlayerAnimationComplete = false;
-        
+
         OnDiscardCard.Invoke(card, endOfTurn);
         Hand.Remove(card);
         DiscardPile.Add(card);
@@ -165,33 +140,24 @@ public class CharacterDeck : MonoBehaviour
     public void DiscardCard(int cardIndex, bool endOfTurn = false, bool ignoreFailure = false)
     {
         if (cardIndex >= Hand.Count && !ignoreFailure)
-        {
             throw new Exception("Tried to discard a card not in range of hand length!");
-        }
-        else
-        {
-            DiscardCard(Hand[cardIndex], endOfTurn);
-        }
+        DiscardCard(Hand[cardIndex], endOfTurn);
     }
 
     public void DiscardRandomCard(bool endOfTurn, bool ignoreFailure = false)
     {
         if (!Hand.Any() && !ignoreFailure)
-        {
             throw new Exception("Tried to discard a card but no cards in hand!");
-        }
 
-        else
-        {
-            DiscardCard(Random.Range(0, Hand.Count), endOfTurn, ignoreFailure);
-        }
+        DiscardCard(Random.Range(0, Hand.Count), endOfTurn, ignoreFailure);
     }
 
-    public void DiscardMultipleCards(IEnumerable<GameObject> targetCards, bool endOfTurn = false, bool ignoreFailure = false)
+    public void DiscardMultipleCards(IEnumerable<GameObject> targetCards, bool endOfTurn = false,
+        bool ignoreFailure = false)
     {
         targetCards.ToList().ForEach(target => DiscardCard(target, endOfTurn, ignoreFailure));
     }
-    
+
     // public void DiscardMultipleCards(IEnumerable<int> targetCardIndices, bool endOfTurn = false, bool ignoreFailure = false)
     // {
     //     targetCardIndices.ToList().ForEach(targetIndex => DiscardCard(targetIndex, endOfTurn, ignoreFailure));
@@ -209,7 +175,7 @@ public class CharacterDeck : MonoBehaviour
 
     public void ShuffleDeck(int number = 0)
     {
-        if(WaitForShuffleAnimationInstance is not null)
+        if (WaitForShuffleAnimationInstance is not null)
             StopCoroutine(WaitForShuffleAnimationInstance);
 
         WaitForShuffleAnimationInstance = StartCoroutine(DoWaitForShuffleAnimation(number));
@@ -219,11 +185,8 @@ public class CharacterDeck : MonoBehaviour
     {
         ShuffleAnimationCompleted = false;
         OnShuffleDeck.Invoke(gameObject);
-        while (!ShuffleAnimationCompleted)
-        {
-            yield return null;
-        }
-        
+        while (!ShuffleAnimationCompleted) yield return null;
+
         DrawPile.AddRange(DiscardPile);
         DiscardPile.Clear();
         DrawPile.RandomShuffle();
@@ -236,5 +199,4 @@ public class CharacterDeck : MonoBehaviour
         card.transform.SetParent(DrawPileParent.transform);
         card.gameObject.SetActive(false);
     }
-
 }

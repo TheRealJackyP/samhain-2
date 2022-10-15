@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,7 +12,13 @@ public class TurnSystem : MonoBehaviour
     public List<GameObject> TurnSequence = new();
     public int CurrentTurnIndex;
 
-    private void Start()
+    public void Start()
+    {
+        if(TurnSequence.Any())
+            Init();
+    }
+
+    public void Init()
     {
         OnTurnStart.Invoke(null, TurnSequence[CurrentTurnIndex]);
     }

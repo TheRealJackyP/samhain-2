@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -17,10 +13,10 @@ public class EntityStatusUI : MonoBehaviour
     public EntityHealth TargetHealth;
 
     public Scrollbar HealthBar;
+    private Camera _camera;
+    private UnityAction<GameObject> DisableArmorAction;
 
     private UnityAction<GameObject> EnableArmorAction;
-    private UnityAction<GameObject> DisableArmorAction;
-    private Camera _camera;
 
     private void Start()
     {
@@ -29,10 +25,15 @@ public class EntityStatusUI : MonoBehaviour
         DisableArmorAction = _ => DisableArmorUI();
         TargetHealth.OnArmorGain.AddListener(EnableArmorAction);
         TargetHealth.OnArmorBreak.AddListener(DisableArmorAction);
-        if (TargetHealth.Armor <= 0)
-        {
-            DisableArmorUI();
-        }
+        if (TargetHealth.Armor <= 0) DisableArmorUI();
+    }
+
+    private void Update()
+    {
+        HealthText.text = TargetHealth.CurrentHealth + "/" + TargetHealth.BaseHealth;
+        ArmorText.text = TargetHealth.Armor.ToString();
+        HealthBar.size = Mathf.Clamp01((float) TargetHealth.CurrentHealth / TargetHealth.BaseHealth);
+        transform.position = _camera.WorldToScreenPoint(TargetHealth.transform.position);
     }
 
     private void OnDestroy()
@@ -49,13 +50,5 @@ public class EntityStatusUI : MonoBehaviour
     public void DisableArmorUI()
     {
         ArmorPanel.gameObject.SetActive(false);
-    }
-
-    private void Update()
-    {
-        HealthText.text = TargetHealth.CurrentHealth + "/" + TargetHealth.BaseHealth;
-        ArmorText.text = TargetHealth.Armor.ToString();
-        HealthBar.size = Mathf.Clamp01((float)TargetHealth.CurrentHealth / TargetHealth.BaseHealth);
-        transform.position = _camera.WorldToScreenPoint(TargetHealth.transform.position);
     }
 }

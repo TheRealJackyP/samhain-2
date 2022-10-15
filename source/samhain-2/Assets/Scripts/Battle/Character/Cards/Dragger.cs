@@ -51,12 +51,12 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
                 MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
             }
-            
+
             return;
         }
-            
 
-        else if (card is TargetedCard targetedCard && TargetingSystem.ActiveTarget != null)
+
+        if (card is TargetedCard targetedCard && TargetingSystem.ActiveTarget != null)
         {
             if (!targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn))
             {
@@ -65,9 +65,10 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
                 MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(OriginalPosition));
             }
+
             return;
         }
-        
+
         if (MoveToOriginalInstance is not null)
             StopCoroutine(MoveToOriginalInstance);
 

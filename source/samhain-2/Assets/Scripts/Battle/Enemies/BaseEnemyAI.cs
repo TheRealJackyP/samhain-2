@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class BaseEnemyAI : MonoBehaviour
 {
@@ -26,10 +23,7 @@ public class BaseEnemyAI : MonoBehaviour
         if (currentTurn == gameObject)
         {
             TurnComplete = false;
-            if (DoTurnInstance != null)
-            {
-                StopCoroutine(DoTurnInstance);
-            }
+            if (DoTurnInstance != null) StopCoroutine(DoTurnInstance);
 
             DoTurnInstance = StartCoroutine(DoTurn());
         }
@@ -43,11 +37,8 @@ public class BaseEnemyAI : MonoBehaviour
     public IEnumerator DoTurn()
     {
         PerformAttack(NextTarget);
-        while (!TurnComplete)
-        {
-            yield return null;
-        }
-        
+        while (!TurnComplete) yield return null;
+
         NextTarget = Characters[Random.Range(0, Characters.Count)];
         TurnSystem.StartNextTurn();
     }

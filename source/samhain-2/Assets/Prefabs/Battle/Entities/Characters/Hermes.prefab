@@ -223,9 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41c45599fd40644b8adc59d42f0a851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHealth: 100
+  BaseHealth: 50
   _currentHealth: 100
   _armor: 0
+  EntityName: Hermes
   OnEntityDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -274,15 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff009da7ee350284ea9e6fc601e2441a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawPile:
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
-  - {fileID: 5693803482192225936, guid: eeaeccf8ab72d4b4f93cb2ab879fdd26, type: 3}
+  DrawPile: []
   Hand: []
   DiscardPile: []
   CardDrawStartofTurn: 5
