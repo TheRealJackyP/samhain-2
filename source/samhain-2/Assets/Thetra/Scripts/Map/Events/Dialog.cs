@@ -10,6 +10,7 @@ public class Dialog : MonoBehaviour
     public TextMeshProUGUI StoryTextBox, TitleBox;
     public Image EventImageBox;
     public string EventTitle;
+    [TextArea]
     public string EventText;
     string curText;
     public Sprite EventImage;
@@ -59,21 +60,32 @@ public class Dialog : MonoBehaviour
            
         }
         textFin = true;
-        
+
         if (didChoose)
+        {
+            yield return new WaitForSeconds(0.5f);
             EndButton.SetActive(true);
+        }
     }
 
     public void OnSkipClick()
     {
         StopAllCoroutines();
+        StartCoroutine(OnSkipClickCo());
+    }
+    public IEnumerator OnSkipClickCo()
+    {
+       
         StoryTextBox.text = "";
         StoryTextBox.text = curText;
 
         textFin = true;
 
         if (didChoose)
+        {
+            yield return new WaitForSeconds(0.5f);
             EndButton.SetActive(true);
+        }
     }
 
     public void OnEventChoice(int choiceID)

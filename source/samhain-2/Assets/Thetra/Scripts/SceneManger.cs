@@ -26,6 +26,8 @@ public class SceneManger : MonoBehaviour
 
     IEnumerator Transition(int SceneID)
     {
+        Fader.instance.FadeOut();
+        yield return new WaitForSeconds(1f);
         DontDestroyOnLoad(gameObject);
         yield return SceneManager.LoadSceneAsync(SceneID);
         MapManager.instance.AllNodes.RemoveRange(0, MapManager.instance.AllNodes.Count);

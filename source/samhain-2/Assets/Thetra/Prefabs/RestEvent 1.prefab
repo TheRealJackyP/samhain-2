@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Option 1 Is pressed
+      value: Hermes will do the nightshift.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -57,39 +57,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_Name
-      value: Event(1)
+      value: RestEvent 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: Lets test if Variants work with this
+      value: The carriage and you take a rest. Who is going to do the nightshift?
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: -1398520353, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: FirstEvent
+      value: Taking a Rest
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: Yes I think it worked just fine!
+      value: The Night passes by without anything happening.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: But it could be better - there are alot of exposed parameters
+      value: You can hear the coyots cry in the night. Some of the Ghosts get scared
+        and run of in to the night, never to be found again. You loose 2 Ghosts.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: -558581855, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[1]
       value: 
-      objectReference: {fileID: 1924467152, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: -2046402877, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Option 2 is pressed
+      value: Carrion will do the nightshift.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

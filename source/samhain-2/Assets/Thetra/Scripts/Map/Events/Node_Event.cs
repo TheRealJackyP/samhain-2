@@ -10,6 +10,13 @@ public class Node_Event : BaseMapNode
 
     override protected void Node()
     {
+        StartCoroutine(EventStart());
+    }
+
+    IEnumerator EventStart()
+    {
+        yield return new WaitForSeconds(0.5f);
         Instantiate(EventPrefabs[Random.Range(0, EventPrefabs.Length)]);
     }
+
 }

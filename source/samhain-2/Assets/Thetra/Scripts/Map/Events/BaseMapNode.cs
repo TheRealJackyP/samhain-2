@@ -40,13 +40,7 @@ public class BaseMapNode : MonoBehaviour
     {
         if (!picked)
         {
-            Node();
-
-            AudioManager.Instance.PlaySFX(NodeSelectSFX);
-
-            MapManager.instance.id.Add(GetComponent<NodeID>().ID);
-            MapManager.instance.CurrentNode = GetComponent<NodeID>().ID;
-            picked = true;
+            StartCoroutine(Wait());
         }
         if (MapManager.instance.CurrentNode == GetComponent<NodeID>().ID)
         {
@@ -80,6 +74,17 @@ public class BaseMapNode : MonoBehaviour
     }
 
     
+
+    IEnumerator Wait()
+    {
+        MapManager.instance.id.Add(GetComponent<NodeID>().ID);
+        MapManager.instance.CurrentNode = GetComponent<NodeID>().ID;
+        AudioManager.Instance.PlaySFX(NodeSelectSFX);
+        yield return new WaitForSeconds(0.5f);
+        picked = true;
+        Node();
+    }
+
 
 
     private void Update()

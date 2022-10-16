@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
     public int CurrentNode;
     public List<GameObject> AllNodes = new List<GameObject>();
     public List<int> id = new List<int>();
-
+    public bool isLastBattle;
     public void Initiate()
     {
         StartCoroutine(InitiateCO());
@@ -51,7 +51,11 @@ public class MapManager : MonoBehaviour
 
     private void OnLoad()
     {
-
+        if(isLastBattle)
+        {
+            Debug.Log("GameEnd");
+            SceneManger.instance.ChangeScene(3);
+        }
 
         Debug.Log("OnLoad");
         foreach  (GameObject Node in AllNodes)

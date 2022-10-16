@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4762114635343082251
+--- !u!1001 &3988482351935606733
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Carrion will do the nightshift.
+      value: They can come along, give them food and let them rest in the wagon.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -57,40 +57,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_Name
-      value: RestEvent
+      value: Wanderer
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: The carriage and you take a rest. Who is going to do the nightshift?
+      value: You meet some wandering souls in the desert. They tell you, that they
+        lost track of their group. They look exhausted.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 21300000, guid: 6fa38da4df84e5d4e89c6e98564b1483, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: Taking a Rest
+      value: Wandering Souls
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: The Night passes by without anything happening.
+      value: You let them join your group. Some food and water replenish their spirit
+        and they stay with you. You loose 1 food and gain 5 ghosts.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: A shooting star catches your eye and you wish for a good travel.  You
-        gain 5 Energy.
+      value: You wish them good luck on their journey. When you turn your self away
+        they suddenly attack. A fight among your party and the wandering souls emerges.
+        You loose 2 health and 3 ghosts!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: -2046402877, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 7f533ca4ed8c87b40a69e7612f2d8984, type: 3}
+      objectReference: {fileID: 21300000, guid: fea1dab523800bb408e82d4608007553, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Hermes will do the nightshift.
+      value: We wish you best of luck but we can't guide you.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

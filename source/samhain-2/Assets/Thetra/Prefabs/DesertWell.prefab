@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4762114635343082251
+--- !u!1001 &434612668539060431
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Carrion will do the nightshift.
+      value: We use the bucket and try to get some fresh water.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -57,40 +57,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_Name
-      value: RestEvent
+      value: DesertWell
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: The carriage and you take a rest. Who is going to do the nightshift?
+      value: In the dry heat of the desert a ghost starts to shout out and point
+        towards the horizon. Something is there. When you get closer you notice a
+        Well. Sand is surrounding it's walls. A bucket on a rope is also there. What
+        are you going to do?
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 389486419, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: Taking a Rest
+      value: A Well in the middle of nowhere
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: The Night passes by without anything happening.
+      value: The bucket hits the ground with s sploosh.  When you pull it back up
+        it's filled with fresh water. You gain 5 Energy!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: A shooting star catches your eye and you wish for a good travel.  You
-        gain 5 Energy.
+      value: You don't trust the well and when you take a look into it, you notice
+        a dead animal on the ground. Some bones and rotten flesh poisons the water.
+        You leave the well behind. You gain 5 health.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 21300000, guid: 7f533ca4ed8c87b40a69e7612f2d8984, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 7f533ca4ed8c87b40a69e7612f2d8984, type: 3}
+      objectReference: {fileID: 21300000, guid: fea1dab523800bb408e82d4608007553, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Hermes will do the nightshift.
+      value: We don't take water from the well but take a look inside.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

@@ -4,11 +4,10 @@ using UnityEngine;
 
 
 public class Node_Battle : BaseMapNode
-{ 
-
-   override protected void Node()
+{
+    public int BattleSceneID = 2;
+    override protected void Node()
     {
-        SceneManger.instance.ChangeScene(2);
+        SceneManger.instance.ChangeScene(BattleSceneID);
     }
-
 }
