@@ -103,4 +103,28 @@ public class Dialog : MonoBehaviour
         Destroy(StoryEventOB,0.2f);
     }
 
+    public void HermesDamage(int dmg)
+    {
+        StatsManager.instance.TakeDmg(dmg, 0);
+    }
+
+    public void hermesHeal(int heal)
+    {
+        StatsManager.instance.Heal(heal, 0);
+    }
+    public void CharonDamage(int dmg)
+    {
+        StatsManager.instance.TakeDmg(dmg, 1);
+    }
+
+    public void CharonHeal(int heal)
+    {
+        StatsManager.instance.Heal(heal, 1);
+    }
+
+    public void EndGame()
+    {
+        SceneManger.instance.ChangeScene(3);
+    }
+
 }

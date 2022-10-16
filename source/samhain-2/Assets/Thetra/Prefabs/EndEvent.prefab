@@ -1,63 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7622003916726448448
+--- !u!1001 &6242085841370176713
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 8175011379550617629}
-    - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: HermesDamage
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826877, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826877, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826877, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 500.00003
       objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826877, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -229.45624
       objectReference: {fileID: 0}
-    - target: {fileID: 1780528945885736164, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+    - target: {fileID: 1780528945850826878, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780528945885736164, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 8175011379550617629}
+      objectReference: {fileID: 5626664600476118420}
     - target: {fileID: 1780528945885736164, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: CharonDamage
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780528945885736164, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 5
+      value: EndGame
       objectReference: {fileID: 0}
     - target: {fileID: 1780528945885736164, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -81,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Hermes takes the lead, he will go fast and save food for the journey.
+      value: Send the ghosts of to the afterlife.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -129,56 +105,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_Name
-      value: Start
+      value: EndEvent
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: The heat of the sun is burning down on the group of ghosts gathered
-        behind you. You two, Hermes and Charon, guide them through the desert, they
-        longed to travel through. It's your choice, which way you choose.
+      value: You made it to the gate of the Underworld. Your followers are looking
+        up to you, waiting for you to let them pass to the other side.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 21300000, guid: 8a5d0f8153f9b8f45bff13f16ddcc76a, type: 3}
+      objectReference: {fileID: 140952568, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: The beginning of the Trail.
+      value: The End of the Journey
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: typingSpeed
-      value: 8
+      propertyPath: ChoiceText.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceImage.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: You choose to take the fast route, some of the ghosts feel repelled
-        by your desition and stay behind, doomed to wander the desert until the end
-        of eternety. Charon lost 5 HP!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: ChoiceText.Array.data[1]
-      value: You choose to be carefull and wait for the slower ghosts too. All the
-        ghosts stay by your side but you need more food on your travel. Hermes loose
-        5 HP!
+      value: Thanks for playing!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: -2046402877, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
-    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: ChoiceImage.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0004a8bde0565b54696e990af51de889, type: 3}
-    - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-      propertyPath: m_text
-      value: Charon takes the lead, he will go slower and protect everyone.
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: c783fd749a48c6c48b77fb2516fd91d1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
---- !u!114 &8175011379550617629 stripped
+--- !u!114 &5626664600476118420 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
-  m_PrefabInstance: {fileID: 7622003916726448448}
+  m_PrefabInstance: {fileID: 6242085841370176713}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

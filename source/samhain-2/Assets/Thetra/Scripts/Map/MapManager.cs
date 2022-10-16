@@ -11,11 +11,14 @@ public class MapManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject);
+        {
+            Destroy(MapManager.instance.gameObject);
+            instance = this;
+        }
 
         DontDestroyOnLoad(gameObject);
     }
-
+    public bool MapB;
     public int CurrentNode;
     public List<GameObject> AllNodes = new List<GameObject>();
     public List<int> id = new List<int>();
@@ -23,6 +26,10 @@ public class MapManager : MonoBehaviour
     public void Initiate()
     {
         StartCoroutine(InitiateCO());
+    }
+    public void MapAbool(bool MapChange)
+    {
+        MapB = !MapB;
     }
     IEnumerator InitiateCO()
     {
