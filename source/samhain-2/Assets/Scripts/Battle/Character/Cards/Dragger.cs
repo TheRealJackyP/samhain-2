@@ -17,7 +17,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     private RectTransform m_DraggingPlane;
 
-    private Coroutine MoveToOriginalInstance;
+    public Coroutine MoveToOriginalInstance;
 
     public HandAnchor HandAnchor
     {
@@ -76,7 +76,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         var card = GetComponent<Card>();
         if (card is UntargetedCard)
         {
-            if (GetComponent<RectTransform>().transform.localPosition.y <= 300f || !card.TryPlayCard(card.gameObject, TargetingSystem.ActiveTurn, TargetingSystem.ActiveTurn))
+            if (GetComponent<RectTransform>().transform.localPosition.y <= 250f || !card.TryPlayCard(card.gameObject, TargetingSystem.ActiveTurn, TargetingSystem.ActiveTurn))
             {
                 if (MoveToOriginalInstance is not null)
                     StopCoroutine(MoveToOriginalInstance);
@@ -91,7 +91,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
         if (card is TargetedCard targetedCard)
         {
-            if (GetComponent<RectTransform>().transform.localPosition.y <= 300f || !targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn) )
+            if (GetComponent<RectTransform>().transform.localPosition.y <= 250f || !targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn) )
             {
                 if (MoveToOriginalInstance is not null)
                     StopCoroutine(MoveToOriginalInstance);

@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,15 +11,17 @@ public class BattleTransitionSystem : MonoBehaviour
     public UnityEvent<bool> OnEndBattleAnimationComplete = new();
     public EntitySpawnSystem EntitySpawnSystem;
 
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
+
     public void Update()
     {
         if (EntitySpawnSystem.Characters.All(element => element.GetComponent<EntityHealth>().IsDead))
         {
             EntitySpawnSystem.Characters.ForEach(element =>
                 EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
-                    element.GetComponent<EntityHealth>().CurrentHealth);
+                    Math.Clamp(element.GetComponent<EntityHealth>().CurrentHealth, 1,
+                        element.GetComponent<EntityHealth>().CurrentHealth));
             OnEndBattle.Invoke(false);
-            
         }
 
 
@@ -26,9 +29,9 @@ public class BattleTransitionSystem : MonoBehaviour
         {
             EntitySpawnSystem.Characters.ForEach(element =>
                 EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
-                    element.GetComponent<EntityHealth>().CurrentHealth);
+                    Math.Clamp(element.GetComponent<EntityHealth>().CurrentHealth, 1,
+                        element.GetComponent<EntityHealth>().CurrentHealth));
             OnEndBattle.Invoke(true);
-            
         }
     }
 

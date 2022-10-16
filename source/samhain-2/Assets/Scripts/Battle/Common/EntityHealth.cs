@@ -19,7 +19,7 @@ public class EntityHealth : MonoBehaviour
         get => _currentHealth;
         set
         {
-            _currentHealth = value;
+            _currentHealth = Math.Clamp(value, 0, BaseHealth);
             if (_currentHealth <= 0)
             {
                 OnEntityDeath.Invoke(gameObject);

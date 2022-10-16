@@ -45,7 +45,7 @@ public class HoverDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Update()
     {
-        if (hovering && !TargetingSystem.ActiveCard && Dragger.DragTarget == null)
+        if (hovering && !TargetingSystem.ActiveCard && Dragger.DragTarget == null && dragger.MoveToOriginalInstance == null)
         {
             dragger.StartHovering();
             originalIndex = gameObject.transform.GetSiblingIndex();

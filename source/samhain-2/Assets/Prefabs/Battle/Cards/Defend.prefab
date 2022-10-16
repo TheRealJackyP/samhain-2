@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: LerpSpeed
-      value: 4000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: RotateSpeed
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: HoverOffset.y
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: Cost
