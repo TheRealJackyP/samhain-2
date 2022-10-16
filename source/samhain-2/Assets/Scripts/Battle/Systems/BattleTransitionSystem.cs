@@ -10,27 +10,30 @@ public class BattleTransitionSystem : MonoBehaviour
     public UnityEvent<bool> OnEndBattle = new();
     public UnityEvent<bool> OnEndBattleAnimationComplete = new();
     public EntitySpawnSystem EntitySpawnSystem;
+    public bool triggered;
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 
     public void Update()
     {
-        if (EntitySpawnSystem.Characters.All(element => element.GetComponent<EntityHealth>().IsDead))
+        if (EntitySpawnSystem.Characters.All(element => element.GetComponent<EntityHealth>().IsDead) && !triggered)
         {
             EntitySpawnSystem.Characters.ForEach(element =>
                 EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
                     Math.Clamp(element.GetComponent<EntityHealth>().CurrentHealth, 1,
-                        element.GetComponent<EntityHealth>().CurrentHealth));
+                        element.GetComponent<EntityHealth>().BaseHealth));
+            triggered = true;
             OnEndBattle.Invoke(false);
         }
 
 
-        else if (EntitySpawnSystem.Enemies.All(element => element.GetComponent<EntityHealth>().IsDead))
+        else if (EntitySpawnSystem.Enemies.All(element => element.GetComponent<EntityHealth>().IsDead)&& !triggered)
         {
             EntitySpawnSystem.Characters.ForEach(element =>
                 EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
                     Math.Clamp(element.GetComponent<EntityHealth>().CurrentHealth, 1,
-                        element.GetComponent<EntityHealth>().CurrentHealth));
+                        element.GetComponent<EntityHealth>().BaseHealth));
+            triggered = true;
             OnEndBattle.Invoke(true);
         }
     }
