@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using CharacterActions =
     System.Tuple<UnityEngine.Events.UnityAction<UnityEngine.GameObject, UnityEngine.GameObject>,
         UnityEngine.Events.UnityAction<UnityEngine.GameObject, UnityEngine.GameObject>,
-        UnityEngine.Events.UnityAction<UnityEngine.GameObject>>;
+        UnityEngine.Events.UnityAction<UnityEngine.GameObject>, UnityEngine.Events.UnityAction<UnityEngine.GameObject>>;
 
 public class EntitySpawnSystem : MonoBehaviour
 {
@@ -23,18 +24,20 @@ public class EntitySpawnSystem : MonoBehaviour
     public TargetingSystem TargetingSystem;
     public TurnSystem TurnSystem;
     public GameObject HandParent;
+    public BattleTransitionSystem BattleTransitionSystem;
 
     private List<CharacterActions> characterActions = new();
     private List<UnityAction<GameObject, GameObject>> enemyActions = new();
+    public HandAnchorPositioningSystem HandAnchorPositioningSystem;
 
     private void Start()
     {
         PopulateBattleDirectives();
         Characters = BattleDirectives.Characters.ToList()
             .Select(element => Instantiate(element, CharacterParentObject.transform)).ToList();
-        Characters.ForEach(element =>
-            element.GetComponent<EntityHealth>()._currentHealth =
-                BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName]);
+       
+        // Characters.ForEach(element =>
+        //     element.GetComponent<EntityHealth>().IsDead = element.GetComponent<EntityHealth>()._currentHealth <= 0);
         Enemies = BattleDirectives.Enemies.ToList().Select(element => Instantiate(element, EnemyParentObject.transform))
             .ToList();
         Characters.ForEach(element => element.GetComponent<EntityTargeting>().TargetingSystem = TargetingSystem);
@@ -44,17 +47,26 @@ public class EntitySpawnSystem : MonoBehaviour
         Characters.ForEach(element => element.GetComponent<CharacterDeck>().HandParent = HandParent);
         Characters.ForEach(element => element.GetComponent<CharacterDeck>().TargetingSystem = TargetingSystem);
         Enemies.ForEach(element => element.GetComponent<EntityTargeting>().TargetingSystem = TargetingSystem);
+        Enemies.ForEach(element => element.GetComponent<EntityHealth>().ResetHealth());
         PositionCharacters();
         PositionEnemies();
         InitializeStatusOverlays();
         TargetingSystem.ActiveTurn = Characters[0];
         TurnSystem.TurnSequence.AddRange(Characters);
         TurnSystem.TurnSequence.AddRange(Enemies);
+        HandAnchorPositioningSystem.Initialize();
+        TurnSystem.Init();
         characterActions = Characters.Select(InitializeCharacterEvents).ToList();
         enemyActions = Enemies.Select(InitializeEnemyEvents).ToList();
         Characters.ForEach(element => element.GetComponent<CharacterDeck>().Initialize());
         Enemies.ForEach(element => element.GetComponent<BaseEnemyAI>().Characters = Characters);
         TurnSystem.OnTurnStart.AddListener(TargetingSystem.UpdateTurn);
+        TurnSystem.TurnSequence[0].GetComponent<CharacterDeck>().DrawCardsStartTurn(null, TurnSystem.TurnSequence[0]);
+        BattleTransitionSystem.OnStartBattle.Invoke();
+        Characters.First(element => element.GetComponent<FireShotgun>()).GetComponent<FireShotgun>().SpawnSystem = this;
+        Characters.ForEach(element =>
+            element.GetComponent<EntityHealth>().CurrentHealth =
+                BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName]);
     }
 
     private void OnDestroy()
@@ -134,7 +146,10 @@ public class EntitySpawnSystem : MonoBehaviour
         UnityAction<GameObject> discardAction = arg0 => character.GetComponent<CharacterDeck>().DiscardEndOfTurn(arg0);
         TurnSystem.OnTurnEnd.AddListener(discardAction);
 
-        CharacterActions actions = new(drawAction, manaAction, discardAction);
+        UnityAction<GameObject> deathAction = arg0 => BattleTransitionSystem.CheckForBattleEnd(arg0);
+        character.GetComponent<EntityHealth>().OnEntityDeath.AddListener(deathAction);
+
+        CharacterActions actions = new(drawAction, manaAction, discardAction, deathAction);
         return actions;
     }
 

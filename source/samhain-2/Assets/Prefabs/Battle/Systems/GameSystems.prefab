@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9210645714877046074}
   - component: {fileID: 9210645714877046021}
+  - component: {fileID: 1766327265}
+  - component: {fileID: 1766327268}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: Untagged
@@ -46,110 +48,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnTurnStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TargetingSystem, Assembly-CSharp
-        m_MethodName: UpdateTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterDeck, Assembly-CSharp
-        m_MethodName: DrawCardsStartTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterMana, Assembly-CSharp
-        m_MethodName: RefillManaStartTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterDeck, Assembly-CSharp
-        m_MethodName: DrawCardsStartTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterMana, Assembly-CSharp
-        m_MethodName: RefillManaStartTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BaseEnemyAI, Assembly-CSharp
-        m_MethodName: PerformTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BaseEnemyAI, Assembly-CSharp
-        m_MethodName: PerformTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BaseEnemyAI, Assembly-CSharp
-        m_MethodName: PerformTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  TurnSequence: []
+  CurrentTurnIndex: 0
+  WaitForEvent: 0
+  EventComplete: 0
+  OnTurnStartAnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1766327265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9210645714877046020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec14d40d5957fdd45ab33f8f1e40182c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BattleDirectives: {fileID: 11400000, guid: 9c44aedfa44239f43bec0c5a0beacb80, type: 2}
+  Characters: []
+  Enemies: []
+  CharacterOffsetRanges: {x: 3, y: 3}
+  EnemyOffsetRanges: {x: 3, y: 3}
+  CharacterParentObject: {fileID: 0}
+  EnemyParentObject: {fileID: 0}
+  StatusOverlayParent: {fileID: 0}
+  StatusOverlayPrefab: {fileID: 8411414714439253257, guid: 37021ecef7539694fa71133ff445e6b9, type: 3}
+  TargetingSystem: {fileID: 0}
+  TurnSystem: {fileID: 9210645714877046021}
+  HandParent: {fileID: 0}
+  BattleTransitionSystem: {fileID: 1766327268}
+  HandAnchorPositioningSystem: {fileID: 0}
+--- !u!114 &1766327268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9210645714877046020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1e02bae11ccda4aa8f63d9325b95f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartBattle:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartBattleAnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndBattle:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterDeck, Assembly-CSharp
-        m_MethodName: DiscardEndOfTurn
-        m_Mode: 0
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -158,22 +118,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterDeck, Assembly-CSharp
-        m_MethodName: DiscardEndOfTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TurnSequence:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  CurrentTurnIndex: 0
+  OnEndBattleAnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  EntitySpawnSystem: {fileID: 1766327265}

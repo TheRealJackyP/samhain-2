@@ -14,6 +14,9 @@ public class Card : MonoBehaviour
 
     public int Cost;
     public int IntData;
+    public int SecondaryIntData;
+    public string CardName;
+    
 
     public bool PlayerAnimationComplete;
     public bool CardAnimationComplete;
@@ -21,8 +24,9 @@ public class Card : MonoBehaviour
     public CharacterDeck OwnerDeck;
 
     public TMP_Text CostText;
+    public TMP_Text TitleText;
 
-    private void Start()
+    public virtual void Start()
     {
         OnFinishCardAnimation.AddListener(DoFinishPlayerAnimation);
         OnFinishPlayerAnimation.AddListener(DoFinishCardAnimation);

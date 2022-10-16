@@ -9,7 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: LerpSpeed
-      value: 400
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: RotateSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: HoverOffset.y
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: Cost
@@ -17,12 +25,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: IntData
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: CostText
       value: 
       objectReference: {fileID: 7523773352987898351}
+    - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: SecondaryIntData
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: CardAnimationComplete
       value: 1
@@ -69,7 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1820683925, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: m_fontSize
-      value: 33.05
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820683925, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2841107370458442270, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: m_Pivot.x
@@ -159,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Defend
       objectReference: {fileID: 0}
+    - target: {fileID: 6519303377546051007, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+      propertyPath: m_text
+      value: Defend
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
 --- !u!1 &5693803482192225936 stripped
@@ -176,6 +196,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 105a34616d227e9419881ed62506068c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9065380734216516067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693803482192225936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e570a341b14dd4394dde648f0a79dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragger: {fileID: 7523773352931137492}
+  hovering: 0
+  TargetingSystem: {fileID: 0}
+  elapsedFrames: 0
+  cooldownFrames: 30
+  originalIndex: 0
+--- !u!114 &7523773352931137492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 538631003, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
+  m_PrefabInstance: {fileID: 7523773352395689103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693803482192225936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a583f7f1784903b5bee6ce104914bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7523773352987898351 stripped

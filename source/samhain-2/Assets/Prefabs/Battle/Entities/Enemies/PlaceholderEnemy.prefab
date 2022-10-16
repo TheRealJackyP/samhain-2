@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4834795516656448761}
   - component: {fileID: 4834795516656448764}
   - component: {fileID: 4834795516656448766}
+  - component: {fileID: -924054264277911112}
   m_Layer: 7
   m_Name: PlaceholderEnemy
   m_TagString: Untagged
@@ -126,12 +127,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41c45599fd40644b8adc59d42f0a851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHealth: 100
+  BaseHealth: 10
   _currentHealth: 100
   _armor: 0
+  EntityName: 
+  IsDead: 0
   OnEntityDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -924054264277911112}
+        m_TargetAssemblyTypeName: EntityDeathAnimator, Assembly-CSharp
+        m_MethodName: DriveEntityDeathAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnArmorBreak:
     m_PersistentCalls:
       m_Calls: []
@@ -170,3 +185,23 @@ MonoBehaviour:
   NextTarget: {fileID: 0}
   TurnComplete: 0
   TurnSystem: {fileID: 0}
+--- !u!114 &-924054264277911112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455253060459129129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cec2a361f298184b9db692d71c238dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaitForEvent: 0
+  OnEntityDeathAnimationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEntityDeathAnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  WaitingForAnimation: 0

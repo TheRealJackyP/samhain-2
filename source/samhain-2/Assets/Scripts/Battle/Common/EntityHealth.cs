@@ -8,6 +8,7 @@ public class EntityHealth : MonoBehaviour
     public int _currentHealth = 100;
     public int _armor;
     public string EntityName;
+    public bool IsDead;
 
     public UnityEvent<GameObject> OnEntityDeath = new();
     public UnityEvent<GameObject> OnArmorBreak = new();
@@ -18,9 +19,12 @@ public class EntityHealth : MonoBehaviour
         get => _currentHealth;
         set
         {
-            _currentHealth = value;
+            _currentHealth = Math.Clamp(value, 0, BaseHealth);
             if (_currentHealth <= 0)
+            {
                 OnEntityDeath.Invoke(gameObject);
+                IsDead = true;
+            }
         }
     }
 
@@ -35,6 +39,13 @@ public class EntityHealth : MonoBehaviour
             if (_armor <= 0)
                 OnArmorBreak.Invoke(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        OnEntityDeath.RemoveAllListeners();
+        OnArmorBreak.RemoveAllListeners();
+        OnArmorGain.RemoveAllListeners();
     }
 
     // public void Start()

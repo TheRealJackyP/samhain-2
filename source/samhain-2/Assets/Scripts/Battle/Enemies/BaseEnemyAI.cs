@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BaseEnemyAI : MonoBehaviour
@@ -31,15 +32,25 @@ public class BaseEnemyAI : MonoBehaviour
 
     public void PerformAttack(GameObject target)
     {
-        target.GetComponent<EntityHealth>().TakeDamage(Attack);
+        if(!target.GetComponent<EntityHealth>().IsDead)
+            target.GetComponent<EntityHealth>().TakeDamage(Attack);
+        else
+        {
+            var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
+            if (livingCharacters.Any())
+            {
+                livingCharacters.First().GetComponent<EntityHealth>().TakeDamage(Attack);
+            }
+        }
     }
 
     public IEnumerator DoTurn()
     {
-        PerformAttack(NextTarget);
+        if(NextTarget != null)
+            PerformAttack(NextTarget);
         while (!TurnComplete) yield return null;
-
-        NextTarget = Characters[Random.Range(0, Characters.Count)];
+        var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
+        NextTarget = livingCharacters.Any() ? livingCharacters[Random.Range(0, livingCharacters.Count)]: null;
         TurnSystem.StartNextTurn();
     }
 }
