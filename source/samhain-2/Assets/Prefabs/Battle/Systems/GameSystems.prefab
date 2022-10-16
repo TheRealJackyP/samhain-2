@@ -54,6 +54,11 @@ MonoBehaviour:
       m_Calls: []
   TurnSequence: []
   CurrentTurnIndex: 0
+  WaitForEvent: 0
+  EventComplete: 0
+  OnTurnStartAnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1766327265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +84,7 @@ MonoBehaviour:
   TurnSystem: {fileID: 9210645714877046021}
   HandParent: {fileID: 0}
   BattleTransitionSystem: {fileID: 1766327268}
+  HandAnchorPositioningSystem: {fileID: 0}
 --- !u!114 &1766327268
 MonoBehaviour:
   m_ObjectHideFlags: 0

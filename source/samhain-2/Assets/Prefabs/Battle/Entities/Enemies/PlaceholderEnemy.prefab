@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41c45599fd40644b8adc59d42f0a851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHealth: 5
+  BaseHealth: 10
   _currentHealth: 100
   _armor: 0
   EntityName: 

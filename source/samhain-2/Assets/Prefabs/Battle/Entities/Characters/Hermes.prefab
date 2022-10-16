@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 1634620314824641801}
   - component: {fileID: 1634620314824641802}
   - component: {fileID: -5748644810454142802}
+  - component: {fileID: -5649666382290793463}
   m_Layer: 6
   m_Name: Hermes
   m_TagString: Untagged
@@ -311,7 +312,19 @@ MonoBehaviour:
       m_Calls: []
   OnStartEndOfTurnDiscard:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5649666382290793463}
+        m_TargetAssemblyTypeName: FireShotgun, Assembly-CSharp
+        m_MethodName: PerformShotgun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ShuffleAnimationCompleted: 0
   Initalized: 0
   DrawPileParent: {fileID: 779421706}
@@ -319,6 +332,7 @@ MonoBehaviour:
   DiscardPileParent: {fileID: 62172966}
   TargetingSystem: {fileID: 0}
   CardsToRetry: 0
+  WaitForShuffleAnimation: 0
 --- !u!114 &-5748644810454142802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,3 +353,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   WaitingForAnimation: 0
+--- !u!114 &-5649666382290793463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917774929369080480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81b8ef1d0488fd4990f6b47ea023511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Deck: {fileID: 1634620314824641802}

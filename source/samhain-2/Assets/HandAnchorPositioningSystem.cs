@@ -59,20 +59,25 @@ public class HandAnchorPositioningSystem : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        DetermineAnchorRotation();
+        
         yield return null;
+        DetermineAnchorRotation();
         ActiveAnchors.ForEach(element=> element.AnchorCard.GetComponent<Dragger>().Init());
+        if(SpawnSystem.TargetingSystem.ActiveTurn.TryGetComponent<CharacterDeck>(out var deck))
+            deck.ReOrderHand();
     }
 
     public void DetermineAnchorRotation()
     {
         if ((ActiveAnchors.Count % 2) == 0)
         {
+            var sortedAnchors = ActiveAnchors.ToList();
+            sortedAnchors.Sort(((anchor, handAnchor) => Mathf.RoundToInt(anchor.transform.localPosition.x - handAnchor.transform.localPosition.x)));
             var multiplier = -ActiveAnchors.Count / 2;
             foreach (var i in Enumerable.Range(0, ActiveAnchors.Count))
             {
-                ActiveAnchors[i].transform.rotation = Quaternion.Euler(multiplier * Angle *.8f * Vector3.back);
-                ActiveAnchors[i].transform.localPosition = Mathf.Abs(multiplier) * Displacement * Vector3.down;
+                sortedAnchors[i].transform.rotation = Quaternion.Euler(multiplier * Angle *.8f * Vector3.back);
+                // sortedAnchors[i].transform.localPosition = Mathf.Abs(multiplier) * Displacement * Vector3.down;
                 multiplier += 1;
                 if (multiplier == 0)
                     multiplier += 1;
@@ -81,11 +86,13 @@ public class HandAnchorPositioningSystem : MonoBehaviour
 
         else
         {
+            var sortedAnchors = ActiveAnchors.ToList();
+            sortedAnchors.Sort(((anchor, handAnchor) => Mathf.RoundToInt(anchor.transform.localPosition.x - handAnchor.transform.localPosition.x)));
             var multiplier = -((ActiveAnchors.Count / 2));
             foreach (var i in Enumerable.Range(0, ActiveAnchors.Count))
             {
-                ActiveAnchors[i].transform.rotation = Quaternion.Euler(multiplier * Angle * Vector3.back);
-                ActiveAnchors[i].transform.localPosition = Mathf.Abs(multiplier) * Displacement * Vector3.down;
+                sortedAnchors[i].transform.rotation = Quaternion.Euler(multiplier * Angle * Vector3.back);
+                // sortedAnchors[i].transform.localPosition = Mathf.Abs(multiplier) * Displacement * Vector3.down;
                 multiplier += 1;
             }
         }

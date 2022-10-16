@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,10 +12,28 @@ public class TurnSystem : MonoBehaviour
     public List<GameObject> TurnSequence = new();
     public int CurrentTurnIndex;
 
+    public bool WaitForEvent;
+    public bool EventComplete;
+    public UnityEvent OnTurnStartAnimationComplete;
+
+    public Coroutine StartTurnInstance;
     public void Start()
     {
         // if(TurnSequence.Any())
         //     Init();
+    }
+
+    public IEnumerator DoStartTurn(GameObject currentTurn)
+    {
+        EventComplete = false;
+        OnTurnStartAnimationComplete.AddListener(() => EventComplete = true);
+        while (!EventComplete)
+        {
+            yield return null;
+        }
+        
+        OnTurnStartAnimationComplete.RemoveListener(() => EventComplete = true);
+        OnTurnStart.Invoke(currentTurn, TurnSequence[CurrentTurnIndex]);
     }
 
     public void Init()
@@ -24,6 +43,7 @@ public class TurnSystem : MonoBehaviour
 
     public void StartNextTurn()
     {
+        Dragger.DragTarget = null;
         var currentTurn = TurnSequence[CurrentTurnIndex];
         OnTurnEnd.Invoke(TurnSequence[CurrentTurnIndex]);
         CurrentTurnIndex = (CurrentTurnIndex + 1) % TurnSequence.Count;
@@ -33,7 +53,16 @@ public class TurnSystem : MonoBehaviour
             CurrentTurnIndex = (CurrentTurnIndex + 1) % TurnSequence.Count;
         }
 
-        OnTurnStart.Invoke(currentTurn, TurnSequence[CurrentTurnIndex]);
+        if(WaitForEvent && EventComplete)
+            OnTurnStart.Invoke(currentTurn, TurnSequence[CurrentTurnIndex]);
+        else if (!WaitForEvent)
+        {
+            OnTurnStart.Invoke(currentTurn, TurnSequence[CurrentTurnIndex]);
+        }
+        else
+        {
+            StartTurnInstance = StartCoroutine(DoStartTurn(currentTurn));
+        }
     }
 
     public GameObject GetCurrentTurn()

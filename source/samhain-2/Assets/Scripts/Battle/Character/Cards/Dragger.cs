@@ -44,9 +44,6 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         if (canvas == null || MoveToOriginalInstance is not null)
             return;
 
-        // We have clicked something that can be dragged.
-        // What we want to do is create an icon for this.
-
         if (dragOnSurfaces)
             m_DraggingPlane = transform as RectTransform;
         else
@@ -182,7 +179,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     private void SetDraggedPosition(PointerEventData data)
     {
-        if (dragOnSurfaces && data.pointerEnter != null && data.pointerEnter.transform as RectTransform != null)
+        if (dragOnSurfaces && data.pointerEnter != null && data.pointerEnter.transform as RectTransform != null && data.pressEventCamera != null)
             m_DraggingPlane = data.pointerEnter.transform as RectTransform;
 
         var rt = GetComponent<RectTransform>();

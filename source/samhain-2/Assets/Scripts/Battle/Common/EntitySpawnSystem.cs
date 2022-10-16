@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
@@ -61,6 +62,7 @@ public class EntitySpawnSystem : MonoBehaviour
         TurnSystem.OnTurnStart.AddListener(TargetingSystem.UpdateTurn);
         TurnSystem.TurnSequence[0].GetComponent<CharacterDeck>().DrawCardsStartTurn(null, TurnSystem.TurnSequence[0]);
         BattleTransitionSystem.OnStartBattle.Invoke();
+        Characters.First(element => element.GetComponent<FireShotgun>()).GetComponent<FireShotgun>().SpawnSystem = this;
     }
 
     private void OnDestroy()

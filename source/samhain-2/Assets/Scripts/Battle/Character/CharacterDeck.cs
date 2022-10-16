@@ -67,6 +67,7 @@ public class CharacterDeck : MonoBehaviour
 
     public void ReOrderHand()
     {
+        Hand.Sort(((anchor, handAnchor) => Mathf.RoundToInt(anchor.transform.localPosition.x - handAnchor.transform.localPosition.x)));
         foreach (var i in Enumerable.Range(0, Hand.Count))
         {
             Hand[i].transform.SetAsLastSibling();
