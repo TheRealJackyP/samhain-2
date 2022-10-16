@@ -971,6 +971,7 @@ MonoBehaviour:
   - {fileID: 2048589671}
   lockedNodes:
   - {fileID: 594956110}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &186940468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,6 +1500,7 @@ MonoBehaviour:
   - {fileID: 1043271567}
   lockedNodes:
   - {fileID: 654974903}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 075a7a7dec623b6458445b5407dd5295, type: 3}
 --- !u!114 &260604067
@@ -1939,6 +1941,7 @@ MonoBehaviour:
   - {fileID: 1752094631}
   - {fileID: 2065063440}
   - {fileID: 1491557760}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &316948854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3097,7 +3100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &473244389
 Transform:
   m_ObjectHideFlags: 0
@@ -3744,7 +3747,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Event (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3827,8 +3830,10 @@ MonoBehaviour:
   lockedNodes:
   - {fileID: 2048589671}
   - {fileID: 775056988}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
+  - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
 --- !u!114 &589069194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,7 +4008,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Event
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4085,8 +4090,10 @@ MonoBehaviour:
   - {fileID: 775056988}
   lockedNodes:
   - {fileID: 186940465}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
+  - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
 --- !u!114 &594956113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5660,6 +5667,7 @@ MonoBehaviour:
   CurserPos: {fileID: 983772733}
   unlockedNodes: []
   lockedNodes: []
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &611194620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5892,6 +5900,7 @@ MonoBehaviour:
   lockedNodes:
   - {fileID: 1942734474}
   - {fileID: 991436816}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
@@ -6273,6 +6282,7 @@ MonoBehaviour:
   - {fileID: 1043271567}
   lockedNodes:
   - {fileID: 260604063}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
@@ -6956,7 +6966,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Event (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7039,8 +7049,10 @@ MonoBehaviour:
   lockedNodes:
   - {fileID: 589069191}
   - {fileID: 2048589671}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
+  - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
 --- !u!114 &775056991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7233,6 +7245,7 @@ MonoBehaviour:
   - {fileID: 611194617}
   lockedNodes:
   - {fileID: 1244520920}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &798706888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7999,6 +8012,7 @@ MonoBehaviour:
   - {fileID: 654974903}
   lockedNodes:
   - {fileID: 1312523924}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &876182652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9309,6 +9323,7 @@ MonoBehaviour:
   lockedNodes:
   - {fileID: 634180251}
   - {fileID: 1942734474}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &991436820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9697,6 +9712,7 @@ MonoBehaviour:
   CurserPos: {fileID: 802734441}
   unlockedNodes: []
   lockedNodes: []
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &1043271571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10100,7 +10116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1075325290
 Transform:
   m_ObjectHideFlags: 0
@@ -10935,7 +10951,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Rest (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11037,6 +11053,7 @@ MonoBehaviour:
   - {fileID: 611194617}
   lockedNodes:
   - {fileID: 798706884}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 075a7a7dec623b6458445b5407dd5295, type: 3}
 --- !u!114 &1244520924
@@ -11445,6 +11462,7 @@ MonoBehaviour:
   - {fileID: 654974903}
   lockedNodes:
   - {fileID: 876182648}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
@@ -12964,6 +12982,7 @@ MonoBehaviour:
   - {fileID: 316948850}
   - {fileID: 1752094631}
   - {fileID: 2065063440}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &1491557763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14750,6 +14769,7 @@ MonoBehaviour:
   - {fileID: 634180251}
   - {fileID: 991436816}
   lockedNodes: []
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs: []
 --- !u!114 &1726763559
 MonoBehaviour:
@@ -14944,7 +14964,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Rest (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15027,6 +15047,7 @@ MonoBehaviour:
   - {fileID: 316948850}
   - {fileID: 2065063440}
   - {fileID: 1491557760}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 075a7a7dec623b6458445b5407dd5295, type: 3}
 --- !u!114 &1752094634
@@ -15786,7 +15807,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Start
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15888,6 +15909,7 @@ MonoBehaviour:
   - {fileID: 186940465}
   - {fileID: 594956110}
   lockedNodes: []
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs: []
 --- !u!114 &1859601329
 MonoBehaviour:
@@ -16681,6 +16703,7 @@ MonoBehaviour:
   lockedNodes:
   - {fileID: 634180251}
   - {fileID: 991436816}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &1942734481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17335,6 +17358,7 @@ MonoBehaviour:
   lockedNodes:
   - {fileID: 589069191}
   - {fileID: 775056988}
+  NodeSelectSFX: {fileID: 0}
 --- !u!114 &2048589674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17425,7 +17449,7 @@ GameObject:
   m_Layer: 5
   m_Name: Node_Event (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17508,8 +17532,10 @@ MonoBehaviour:
   - {fileID: 316948850}
   - {fileID: 1752094631}
   - {fileID: 1491557760}
+  NodeSelectSFX: {fileID: 0}
   EventPrefabs:
   - {fileID: 6531305377824031967, guid: 4bea6b1bad414c14da6405b2c858f460, type: 3}
+  - {fileID: 1780528946754680788, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
 --- !u!114 &2065063443
 MonoBehaviour:
   m_ObjectHideFlags: 0

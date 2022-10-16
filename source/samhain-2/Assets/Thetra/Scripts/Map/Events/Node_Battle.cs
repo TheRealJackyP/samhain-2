@@ -8,7 +8,7 @@ public class Node_Battle : BaseMapNode
 
    override protected void Node()
     {
-        SceneManger.instance.ChangeScene(1);
+        SceneManger.instance.ChangeScene(2);
     }
 
 }
