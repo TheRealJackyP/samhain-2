@@ -131,6 +131,7 @@ public class EntitySpawnSystem : MonoBehaviour
     {
         var overlay = Instantiate(StatusOverlayPrefab, StatusOverlayParent.transform);
         overlay.GetComponent<EntityStatusUI>().TargetHealth = entity.GetComponent<EntityHealth>();
+        overlay.transform.SetAsFirstSibling();
     }
 
     public CharacterActions InitializeCharacterEvents(GameObject character)
