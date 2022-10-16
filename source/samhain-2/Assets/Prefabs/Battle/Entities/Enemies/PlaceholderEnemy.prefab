@@ -154,6 +154,21 @@ MonoBehaviour:
   OnArmorGain:
     m_PersistentCalls:
       m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8465805630191656919}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Flinch
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4834795516656448764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +201,21 @@ MonoBehaviour:
   NextTarget: {fileID: 0}
   TurnComplete: 0
   TurnSystem: {fileID: 0}
+  OnAnimateAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8465805630191656919}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-924054264277911112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +231,19 @@ MonoBehaviour:
   WaitForEvent: 0
   OnEntityDeathAnimationStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8465805630191656919}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Death
+          m_BoolArgument: 0
+        m_CallState: 2
   OnEntityDeathAnimationComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -216,7 +258,7 @@ Animator:
   m_GameObject: {fileID: 7455253060459129129}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2379ba9fabc7a94bbe86e3aa20562a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

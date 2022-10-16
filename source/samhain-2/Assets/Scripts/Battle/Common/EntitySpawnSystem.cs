@@ -159,6 +159,7 @@ public class EntitySpawnSystem : MonoBehaviour
         UnityAction<GameObject, GameObject>
             action = (arg0, o) => enemy.GetComponent<BaseEnemyAI>().PerformTurn(arg0, o);
         TurnSystem.OnTurnStart.AddListener(action);
+        enemy.GetComponent<BaseEnemyAI>().OnAnimateAttack.AddListener(TurnSystem.StartNextTurn);
         return action;
     }
 

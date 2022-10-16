@@ -22,6 +22,7 @@ public class TurnSystem : MonoBehaviour
         // if(TurnSequence.Any())
         //     Init();
     }
+    
 
     public IEnumerator DoStartTurn(GameObject currentTurn)
     {

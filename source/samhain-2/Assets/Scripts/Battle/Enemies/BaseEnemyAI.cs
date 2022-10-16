@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class BaseEnemyAI : MonoBehaviour
 {
@@ -14,9 +17,23 @@ public class BaseEnemyAI : MonoBehaviour
 
     private Coroutine DoTurnInstance;
 
+    public UnityEvent OnAnimateAttack = new();
+    public UnityEvent OnAnimateAttackComplete = new();
+
     private void Start()
     {
         NextTarget = Characters[Random.Range(0, Characters.Count)];
+    }
+
+    private void OnDestroy()
+    {
+        OnAnimateAttack.RemoveAllListeners();
+        OnAnimateAttackComplete.RemoveAllListeners();
+    }
+
+    public void InvokeAnimateAttackComplete()
+    {
+        OnAnimateAttackComplete.Invoke();
     }
 
     public void PerformTurn(GameObject pastTurn, GameObject currentTurn)
@@ -42,6 +59,7 @@ public class BaseEnemyAI : MonoBehaviour
                 livingCharacters.First().GetComponent<EntityHealth>().TakeDamage(Attack);
             }
         }
+        OnAnimateAttack.Invoke();
     }
 
     public IEnumerator DoTurn()
