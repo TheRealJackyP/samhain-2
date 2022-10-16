@@ -19,7 +19,11 @@ public class TargetingSystem : MonoBehaviour
 
             if (cardData)
                 if (cardData.TargetingFilter == (cardData.TargetingFilter | (1 << ActiveTarget.layer)))
+                {
                     OnTargetClicked.Invoke(ActiveTarget);
+                    ActiveTurn.GetComponent<Animator>().SetTrigger("Attack");
+                }
+                    
         }
 
         else if ((Input.GetMouseButtonDown(1) && ActiveCard != null) || (Input.GetMouseButtonDown(0) && ActiveCard != null && ActiveTarget == null))

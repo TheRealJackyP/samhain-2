@@ -13,6 +13,7 @@ public class EntityHealth : MonoBehaviour
     public UnityEvent<GameObject> OnEntityDeath = new();
     public UnityEvent<GameObject> OnArmorBreak = new();
     public UnityEvent<GameObject> OnArmorGain = new();
+    public UnityEvent<GameObject> OnTakeDamage = new();
 
     public int CurrentHealth
     {
@@ -71,6 +72,8 @@ public class EntityHealth : MonoBehaviour
         {
             CurrentHealth = Math.Clamp(CurrentHealth - unblocked, 0, BaseHealth);
         }
+        
+        OnTakeDamage.Invoke(gameObject);
     }
 
     public void ResetHealth()
