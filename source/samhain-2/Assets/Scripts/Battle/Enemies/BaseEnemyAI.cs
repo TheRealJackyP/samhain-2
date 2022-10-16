@@ -34,6 +34,7 @@ public class BaseEnemyAI : MonoBehaviour
     public void InvokeAnimateAttackComplete()
     {
         OnAnimateAttackComplete.Invoke();
+        TurnComplete = true;
     }
 
     public void PerformTurn(GameObject pastTurn, GameObject currentTurn)
@@ -59,6 +60,7 @@ public class BaseEnemyAI : MonoBehaviour
                 livingCharacters.First().GetComponent<EntityHealth>().TakeDamage(Attack);
             }
         }
+        AudioManager.Instance.PlaySFX(SFXInterface.Instance.EnemySFX);
         OnAnimateAttack.Invoke();
     }
 
@@ -66,8 +68,18 @@ public class BaseEnemyAI : MonoBehaviour
     {
         if(NextTarget != null)
             PerformAttack(NextTarget);
-        while (!TurnComplete) yield return null;
-        var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
+        while (!TurnComplete)
+        {
+            yield return null;
+        }
+
+        var elapsedTime = 0f;
+        while (elapsedTime < .5f)
+        {
+            yield return null;
+            elapsedTime += Time.deltaTime;
+        }
+            var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
         NextTarget = livingCharacters.Any() ? livingCharacters[Random.Range(0, livingCharacters.Count)]: null;
         TurnSystem.StartNextTurn();
     }

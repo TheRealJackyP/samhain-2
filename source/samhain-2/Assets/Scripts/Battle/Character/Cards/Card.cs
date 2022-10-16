@@ -49,6 +49,10 @@ public class Card : MonoBehaviour
             return false;
         }
 
+        if (cardData is UntargetedCard)
+        {
+            AudioManager.Instance.PlaySFX(SFXInterface.Instance.ArmorSFX);
+        }
         playerMana.CurrentMana -= cardData.Cost;
         OnPlayCard.Invoke(card, target, player);
         OnStartPlayerAnimation.Invoke(card, target, player);

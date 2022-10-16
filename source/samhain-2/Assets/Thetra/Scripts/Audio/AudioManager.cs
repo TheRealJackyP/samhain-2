@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -17,7 +18,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource Music, SFX;
 
-
     public void PlayMusic(AudioClip clip)
     {
         Music.clip = null;
@@ -28,7 +28,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFX.PlayOneShot(clip);
-      
     }
 
     public void ChangeMasterVolume(float value)

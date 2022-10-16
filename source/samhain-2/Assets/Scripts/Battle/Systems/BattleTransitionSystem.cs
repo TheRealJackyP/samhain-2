@@ -23,6 +23,7 @@ public class BattleTransitionSystem : MonoBehaviour
                     Math.Clamp(element.GetComponent<EntityHealth>().CurrentHealth, 1,
                         element.GetComponent<EntityHealth>().BaseHealth));
             triggered = true;
+            AudioManager.Instance.PlayMusic(SFXInterface.Instance.GameMusic);
             OnEndBattle.Invoke(false);
         }
 
@@ -34,6 +35,7 @@ public class BattleTransitionSystem : MonoBehaviour
                     Math.Clamp(element.GetComponent<EntityHealth>().CurrentHealth, 1,
                         element.GetComponent<EntityHealth>().BaseHealth));
             triggered = true;
+            AudioManager.Instance.PlayMusic(SFXInterface.Instance.GameMusic);
             OnEndBattle.Invoke(true);
         }
     }

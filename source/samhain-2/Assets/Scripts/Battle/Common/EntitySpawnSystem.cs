@@ -67,6 +67,8 @@ public class EntitySpawnSystem : MonoBehaviour
         Characters.ForEach(element =>
             element.GetComponent<EntityHealth>().CurrentHealth =
                 BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName]);
+        Enemies.ForEach(element => element.GetComponent<BaseEnemyAI>().TurnSystem = TurnSystem);
+        AudioManager.Instance.PlayMusic(SFXInterface.Instance.BattleMusic);
     }
 
     private void OnDestroy()
@@ -159,7 +161,7 @@ public class EntitySpawnSystem : MonoBehaviour
         UnityAction<GameObject, GameObject>
             action = (arg0, o) => enemy.GetComponent<BaseEnemyAI>().PerformTurn(arg0, o);
         TurnSystem.OnTurnStart.AddListener(action);
-        enemy.GetComponent<BaseEnemyAI>().OnAnimateAttack.AddListener(TurnSystem.StartNextTurn);
+        // enemy.GetComponent<BaseEnemyAI>().OnAnimateAttackComplete.AddListener(TurnSystem.StartNextTurn);
         return action;
     }
 

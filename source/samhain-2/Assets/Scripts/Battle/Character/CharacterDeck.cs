@@ -92,6 +92,7 @@ public class CharacterDeck : MonoBehaviour
             nextCard.transform.localPosition = Vector3.zero;
             nextCard.transform.localScale = Vector3.one;
             nextCard.gameObject.SetActive(true);
+            AudioManager.Instance.PlaySFX(SFXInterface.Instance.DrawSFX);
             return true;
         }
 
@@ -139,6 +140,7 @@ public class CharacterDeck : MonoBehaviour
         if (endingTurn != gameObject)
             return;
 
+        AudioManager.Instance.PlaySFX(SFXInterface.Instance.DiscardSFX);
         OnStartEndOfTurnDiscard.Invoke(gameObject);
         DiscardAll(true);
     }

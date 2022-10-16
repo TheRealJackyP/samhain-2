@@ -22,6 +22,7 @@ public class TargetingSystem : MonoBehaviour
                 {
                     OnTargetClicked.Invoke(ActiveTarget);
                     ActiveTurn.GetComponent<Animator>().SetTrigger("Attack");
+                    AudioManager.Instance.PlaySFX(SFXInterface.Instance.ShootSFX);
                 }
                     
         }
