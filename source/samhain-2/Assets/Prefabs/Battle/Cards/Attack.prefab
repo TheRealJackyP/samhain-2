@@ -68,6 +68,14 @@ PrefabInstance:
       value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6258028578431906130, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
+      propertyPath: RotateSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258028578431906130, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
+      propertyPath: HoverOffset.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258028578431906130, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
       propertyPath: dragOnSurfaces
       value: 0
       objectReference: {fileID: 0}
@@ -180,5 +188,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5063920c685d9fb4f83a1bcf9ddcdca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3401648592756124792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628989934890666436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e570a341b14dd4394dde648f0a79dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragger: {fileID: 8976592289954396288}
+  hovering: 0
+  TargetingSystem: {fileID: 0}
+  elapsedFrames: 0
+  cooldownFrames: 5
+--- !u!114 &8976592289954396288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6258028578431906130, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
+  m_PrefabInstance: {fileID: 3047732936788986322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628989934890666436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a583f7f1784903b5bee6ce104914bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

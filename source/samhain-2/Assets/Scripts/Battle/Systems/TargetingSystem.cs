@@ -22,9 +22,10 @@ public class TargetingSystem : MonoBehaviour
                     OnTargetClicked.Invoke(ActiveTarget);
         }
 
-        else if (Input.GetMouseButtonDown(1) && ActiveCard != null)
+        else if ((Input.GetMouseButtonDown(1) && ActiveCard != null) || (Input.GetMouseButtonDown(0) && ActiveCard != null && ActiveTarget == null))
         {
             OnTargetUnClicked.Invoke(ActiveCard);
+            ActiveTurn.GetComponent<CharacterDeck>().ReOrderHand();
             ActiveCard = null;
         }
     }
@@ -32,6 +33,7 @@ public class TargetingSystem : MonoBehaviour
     public void UpdateTurn(GameObject LastTurn, GameObject NextTurn)
     {
         ActiveTarget = null;
+        ActiveCard = null;
         ActiveTurn = NextTurn;
     }
 }

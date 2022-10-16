@@ -26,6 +26,7 @@ public class EntitySpawnSystem : MonoBehaviour
 
     private List<CharacterActions> characterActions = new();
     private List<UnityAction<GameObject, GameObject>> enemyActions = new();
+    public HandAnchorPositioningSystem HandAnchorPositioningSystem;
 
     private void Start()
     {
@@ -51,6 +52,7 @@ public class EntitySpawnSystem : MonoBehaviour
         TargetingSystem.ActiveTurn = Characters[0];
         TurnSystem.TurnSequence.AddRange(Characters);
         TurnSystem.TurnSequence.AddRange(Enemies);
+        HandAnchorPositioningSystem.Initialize();
         TurnSystem.Init();
         characterActions = Characters.Select(InitializeCharacterEvents).ToList();
         enemyActions = Enemies.Select(InitializeEnemyEvents).ToList();

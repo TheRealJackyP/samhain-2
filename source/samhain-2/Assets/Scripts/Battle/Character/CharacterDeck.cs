@@ -55,6 +55,24 @@ public class CharacterDeck : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        OnDrawFailed.RemoveAllListeners();
+        OnDrawSuccess.RemoveAllListeners();
+        OnShuffleDeck.RemoveAllListeners();
+        OnShuffleDeckAnimationComplete.RemoveAllListeners();
+        OnDiscardCard.RemoveAllListeners();
+        OnStartEndOfTurnDiscard.RemoveAllListeners();
+    }
+
+    public void ReOrderHand()
+    {
+        foreach (var i in Enumerable.Range(0, Hand.Count))
+        {
+            Hand[i].transform.SetAsLastSibling();
+        }
+    }
+
     public bool DrawCard()
     {
         if (Hand.Count >= MaxHandSize || (!DrawPile.Any() && !DiscardPile.Any()))

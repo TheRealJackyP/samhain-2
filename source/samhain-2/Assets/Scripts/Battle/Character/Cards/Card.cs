@@ -14,6 +14,8 @@ public class Card : MonoBehaviour
 
     public int Cost;
     public int IntData;
+    public int SecondaryIntData;
+    
 
     public bool PlayerAnimationComplete;
     public bool CardAnimationComplete;
