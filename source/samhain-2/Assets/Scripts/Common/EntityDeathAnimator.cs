@@ -16,6 +16,11 @@ public class EntityDeathAnimator : MonoBehaviour
         if (DoWaitForAnimationInstance != null) StopCoroutine(DoWaitForAnimationInstance);
     }
 
+    public void EndDeathAnimation()
+    {
+        OnEntityDeathAnimationComplete.Invoke(gameObject);
+    }
+
     public void DriveEntityDeathAnimation(GameObject deathTarget)
     {
         OnEntityDeathAnimationStart.Invoke(deathTarget);
