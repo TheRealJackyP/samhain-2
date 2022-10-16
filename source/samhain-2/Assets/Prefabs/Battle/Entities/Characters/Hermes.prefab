@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 1634620314824641802}
   - component: {fileID: -5748644810454142802}
   - component: {fileID: -5649666382290793463}
+  - component: {fileID: 1982908113090253363}
   m_Layer: 6
   m_Name: Hermes
   m_TagString: Untagged
@@ -370,3 +371,23 @@ MonoBehaviour:
   OnDischargeCard:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &1982908113090253363
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917774929369080480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7394188539f7b2442a156a93b2d9bf32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
