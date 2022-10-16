@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using CharacterActions =
@@ -34,9 +35,9 @@ public class EntitySpawnSystem : MonoBehaviour
         PopulateBattleDirectives();
         Characters = BattleDirectives.Characters.ToList()
             .Select(element => Instantiate(element, CharacterParentObject.transform)).ToList();
-        Characters.ForEach(element =>
-            element.GetComponent<EntityHealth>()._currentHealth =
-                BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName]);
+       
+        // Characters.ForEach(element =>
+        //     element.GetComponent<EntityHealth>().IsDead = element.GetComponent<EntityHealth>()._currentHealth <= 0);
         Enemies = BattleDirectives.Enemies.ToList().Select(element => Instantiate(element, EnemyParentObject.transform))
             .ToList();
         Characters.ForEach(element => element.GetComponent<EntityTargeting>().TargetingSystem = TargetingSystem);
@@ -63,6 +64,9 @@ public class EntitySpawnSystem : MonoBehaviour
         TurnSystem.TurnSequence[0].GetComponent<CharacterDeck>().DrawCardsStartTurn(null, TurnSystem.TurnSequence[0]);
         BattleTransitionSystem.OnStartBattle.Invoke();
         Characters.First(element => element.GetComponent<FireShotgun>()).GetComponent<FireShotgun>().SpawnSystem = this;
+        Characters.ForEach(element =>
+            element.GetComponent<EntityHealth>().CurrentHealth =
+                BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName]);
     }
 
     private void OnDestroy()

@@ -13,9 +13,23 @@ public class BattleTransitionSystem : MonoBehaviour
     public void Update()
     {
         if (EntitySpawnSystem.Characters.All(element => element.GetComponent<EntityHealth>().IsDead))
+        {
+            EntitySpawnSystem.Characters.ForEach(element =>
+                EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
+                    element.GetComponent<EntityHealth>().CurrentHealth);
             OnEndBattle.Invoke(false);
-        if (EntitySpawnSystem.Enemies.All(element => element.GetComponent<EntityHealth>().IsDead))
-            OnEndBattle.Invoke(false);
+            
+        }
+
+
+        else if (EntitySpawnSystem.Enemies.All(element => element.GetComponent<EntityHealth>().IsDead))
+        {
+            EntitySpawnSystem.Characters.ForEach(element =>
+                EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
+                    element.GetComponent<EntityHealth>().CurrentHealth);
+            OnEndBattle.Invoke(true);
+            
+        }
     }
 
     public void CheckForBattleEnd(GameObject deadTarget)

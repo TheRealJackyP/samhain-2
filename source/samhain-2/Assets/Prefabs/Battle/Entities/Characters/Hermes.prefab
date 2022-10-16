@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41c45599fd40644b8adc59d42f0a851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHealth: 30
+  BaseHealth: 20
   _currentHealth: 100
   _armor: 0
   EntityName: Hermes
@@ -366,3 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Deck: {fileID: 1634620314824641802}
+  SpawnSystem: {fileID: 0}
+  OnDischargeCard:
+    m_PersistentCalls:
+      m_Calls: []

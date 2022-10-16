@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41c45599fd40644b8adc59d42f0a851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHealth: 50
+  BaseHealth: 30
   _currentHealth: 100
   _armor: 0
   EntityName: Charon
@@ -319,6 +319,7 @@ MonoBehaviour:
   DiscardPileParent: {fileID: 561908591}
   TargetingSystem: {fileID: 0}
   CardsToRetry: 0
+  WaitForShuffleAnimation: 0
 --- !u!114 &-2810014559604094579
 MonoBehaviour:
   m_ObjectHideFlags: 0

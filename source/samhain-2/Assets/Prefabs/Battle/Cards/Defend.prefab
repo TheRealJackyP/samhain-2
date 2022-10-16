@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: IntData
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 538631004, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: CostText

@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6258028577895737877, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
       propertyPath: IntData
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6258028577895737877, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
       propertyPath: SecondaryIntData
