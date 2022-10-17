@@ -175,7 +175,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8a5d0f8153f9b8f45bff13f16ddcc76a, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: The beginning of the Trail.
+      value: Setting Off on the Trail
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: typingSpeed
@@ -194,7 +194,7 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
       value: You choose the safer route and wait for the slower ghosts. Hermes grows
-        bored and begins to nod off, causing her to fall off the wagon. Hermes loses
+        bored and begins to nod off, causing her to fall off the wagon. Hermes loose
         5 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

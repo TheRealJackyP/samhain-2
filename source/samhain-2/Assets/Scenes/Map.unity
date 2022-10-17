@@ -1821,125 +1821,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &311493460
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8175011378124149571, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_text
-      value: Take the safer route.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379479114045, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379479114045, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379479114045, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379479114045, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379515514277, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379515514277, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379515514277, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379515514277, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: EventText
-      value: The sun burns down on the group of ghosts gathered behind you. You two,
-        Hermes and Charon, prepare to guide them through the desert. As usual, the
-        Trail presents you with a choice of how to proceed.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: EventTitle
-      value: Setting Off on the Trail
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: ChoiceText.Array.data[0]
-      value: You choose to take the faster route, making it more difficult for the
-        ghosts to follow. Charon has to circle back and gather them, lest they be
-        doomed to wander the desert forever. Charon lost 5 HP!
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: ChoiceText.Array.data[1]
-      value: You choose the safer route and wait for the slower ghosts. Hermes grows
-        bored and begins to nod off, causing her to fall off the wagon. Hermes loose
-        5 HP!
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379711919764, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_Name
-      value: Start
-      objectReference: {fileID: 0}
-    - target: {fileID: 8175011379806708595, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
-      propertyPath: m_text
-      value: Take the faster route.
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
 --- !u!1 &316948850
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5424,18 @@ MonoBehaviour:
       - m_Target: {fileID: 611194619}
         m_TargetAssemblyTypeName: BaseMapNode, Assembly-CSharp
         m_MethodName: OnNodeSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2105378570}
+        m_TargetAssemblyTypeName: MapSwap, Assembly-CSharp
+        m_MethodName: lastBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11059,7 +10952,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &676827604
 GameObject:
@@ -11897,7 +11790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745816024
 GameObject:
@@ -14604,6 +14497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 999104190}
+  - component: {fileID: 999104191}
   m_Layer: 0
   m_Name: EndGameManager
   m_TagString: Untagged
@@ -14624,8 +14518,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999104191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999104189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b55975b9eaa254d933530a00c969cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndEvent: {fileID: 5626664600377338653, guid: 7728af4e836f7b743b3715e3485597d2, type: 3}
 --- !u!1 &1001622999
 GameObject:
   m_ObjectHideFlags: 0
@@ -14934,6 +14841,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1043271570}
         m_TargetAssemblyTypeName: BaseMapNode, Assembly-CSharp
         m_MethodName: OnNodeSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2105378570}
+        m_TargetAssemblyTypeName: MapSwap, Assembly-CSharp
+        m_MethodName: lastBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25180,7 +25099,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6850531768689997064, guid: ef038f0161a65bb45aa481195d7f87c6, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6850531768689997064, guid: ef038f0161a65bb45aa481195d7f87c6, type: 3}
       propertyPath: m_LocalPosition.x

@@ -19,4 +19,9 @@ public class MapSwap : MonoBehaviour
             MapB.SetActive(false);
         }
     }
+
+    public void lastBattle()
+    {
+        MapManager.instance.LastBattle();
+    }
 }

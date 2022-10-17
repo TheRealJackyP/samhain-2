@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 3696190801831335508}
   - component: {fileID: 9035006695101932256}
   - component: {fileID: 6014830601562939165}
+  - component: {fileID: 8198201317879074306}
   m_Layer: 5
   m_Name: CostBadge (1)
   m_TagString: Untagged
@@ -304,6 +305,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8198201317879074306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780941860880228339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 4, y: 4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6234167951946196798
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +765,21 @@ MonoBehaviour:
   elapsedFrames: 0
   cooldownFrames: 30
   originalIndex: 0
+--- !u!114 &6242581195775703620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628989934890666436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!224 &6628989934890666437 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8193560427039064087, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
@@ -790,3 +821,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a583f7f1784903b5bee6ce104914bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8976592290013262328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6258028578375530538, guid: cb1fa0d5195736248853eb038b9af47b, type: 3}
+  m_PrefabInstance: {fileID: 3047732936788986322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6071389528697134229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976592290013262328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 4, y: 4}
+  m_UseGraphicAlpha: 1

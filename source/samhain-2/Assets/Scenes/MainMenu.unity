@@ -1708,7 +1708,7 @@ PrefabInstance:
     - target: {fileID: 8694958148710866073, guid: e2fadfcb4898eca4b9ea9bbbde05e1c9, type: 3}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: e302282a02f9ac84ebb1e4f3ac969e35, type: 3}
+      objectReference: {fileID: 8300000, guid: 898d7a834832cea4183a4ae5abdb725e, type: 3}
     - target: {fileID: 8694958148710866075, guid: e2fadfcb4898eca4b9ea9bbbde05e1c9, type: 3}
       propertyPath: m_Name
       value: Music_AudioOBJ
@@ -1992,6 +1992,10 @@ PrefabInstance:
       propertyPath: _slider2
       value: 
       objectReference: {fileID: 623194503}
+    - target: {fileID: 6977495142136067976, guid: a869b6b90ea996247bc40fe1a249beca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.099976
+      objectReference: {fileID: 0}
     - target: {fileID: 8578188271440758868, guid: a869b6b90ea996247bc40fe1a249beca, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3488,6 +3492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5941458489215679393, guid: c09edaab66b2ff946b04b7da793d17a6, type: 3}
+      propertyPath: StartEvent
+      value: 
+      objectReference: {fileID: 8175011379711919764, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
     - target: {fileID: 5941458489215679406, guid: c09edaab66b2ff946b04b7da793d17a6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3804,9 +3812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4039,9 +4047,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

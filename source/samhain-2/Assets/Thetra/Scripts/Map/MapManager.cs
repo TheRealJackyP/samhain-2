@@ -6,6 +6,7 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public static MapManager instance;
+    
     private void Awake()
     {
         if (instance == null)
@@ -23,6 +24,9 @@ public class MapManager : MonoBehaviour
     public List<GameObject> AllNodes = new List<GameObject>();
     public List<int> id = new List<int>();
     public bool isLastBattle;
+
+    public GameObject StartEvent;
+    bool started;
     public void Initiate()
     {
         StartCoroutine(InitiateCO());
@@ -94,9 +98,18 @@ public class MapManager : MonoBehaviour
           
         }
 
+        if(CurrentNode == 0 && !started)
+        {
+            started = true;
+            Instantiate(StartEvent);
+        }
        
 
 
     }
 
+    public void LastBattle()
+    {
+        isLastBattle = true;
+    }
 }
