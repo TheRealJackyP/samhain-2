@@ -4,8 +4,18 @@ using UnityEngine.Events;
 public class TargetedCard : Card
 {
     public LayerMask TargetingFilter;
+    public GameObject ShellImage;
     private UnityAction<GameObject> PlayTargetedCardAction;
     private UnityAction<GameObject> ReturnActiveCardAction;
+
+    private void Update()
+    {
+        if (OwnerDeck.GetComponent<EntityHealth>().EntityName != "Hermes")
+        {
+            ShellImage.SetActive(false);
+            GetComponent<Animator>().SetBool("Off", true);
+        }
+    }
 
     public override void OnDestroy()
     {
@@ -16,6 +26,21 @@ public class TargetedCard : Card
         if (ReturnActiveCardAction != null)
             OwnerDeck.TargetingSystem.OnTargetUnClicked.RemoveListener(ReturnActiveCardAction);
     }
+
+    public void ResetShellImage()
+    {
+        if (OwnerDeck.GetComponent<EntityHealth>().EntityName != "Hermes")
+        {
+            ShellImage.SetActive(true);
+            GetComponent<Animator>().SetTrigger("Reset");
+        }
+    }
+
+    public void MoveToGun(GameObject target)
+    {
+        if (OwnerDeck.GetComponent<EntityHealth>().EntityName == "Hermes") GetComponent<Animator>().SetTrigger("Move");
+    }
+
 
     public override bool TryPlayCard(GameObject card, GameObject target, GameObject player)
     {

@@ -101,10 +101,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: In the dry heat of the desert a ghost starts to shout out and point
-        towards the horizon. Something is there. When you get closer you notice a
-        Well. Sand is surrounding it's walls. A bucket on a rope is also there. What
-        are you going to do?
+      value: In the dry heat of the desert a ghost cries out and points towards something
+        on the horizon. When you get closer you find a well, long abandoned. A bucket
+        on a rope is still remains. What will you do?
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
@@ -112,18 +111,18 @@ PrefabInstance:
       objectReference: {fileID: 389486419, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: A Well in the middle of nowhere
+      value: A Well in the Middle of Nowhere
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: The bucket hits the ground with s sploosh.  When you pull it back up
+      value: The bucket hits the ground with a sploosh.  When you pull it back up
         it's filled with fresh water. Hermes gains 5 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: You don't trust the well and when you take a look into it, you notice
-        a dead animal on the ground. Some bones and rotten flesh poisons the water.
-        You leave the well behind. Charon gains 5 HP!
+      value: You don't trust the well and your survey notice a dead animal on the
+        ground. Some bones and rotten flesh poisons the water. You leave the well
+        behind. Charon gains 5 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]

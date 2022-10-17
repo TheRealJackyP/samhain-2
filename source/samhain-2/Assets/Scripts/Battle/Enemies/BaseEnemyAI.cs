@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 public class BaseEnemyAI : MonoBehaviour
 {
@@ -15,10 +13,10 @@ public class BaseEnemyAI : MonoBehaviour
     public bool TurnComplete;
     public TurnSystem TurnSystem;
 
-    private Coroutine DoTurnInstance;
-
     public UnityEvent OnAnimateAttack = new();
     public UnityEvent OnAnimateAttackComplete = new();
+
+    private Coroutine DoTurnInstance;
 
     private void Start()
     {
@@ -50,28 +48,25 @@ public class BaseEnemyAI : MonoBehaviour
 
     public void PerformAttack(GameObject target)
     {
-        if(!target.GetComponent<EntityHealth>().IsDead)
+        if (!target.GetComponent<EntityHealth>().IsDead)
+        {
             target.GetComponent<EntityHealth>().TakeDamage(Attack);
+        }
         else
         {
             var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
-            if (livingCharacters.Any())
-            {
-                livingCharacters.First().GetComponent<EntityHealth>().TakeDamage(Attack);
-            }
+            if (livingCharacters.Any()) livingCharacters.First().GetComponent<EntityHealth>().TakeDamage(Attack);
         }
+
         AudioManager.Instance.PlaySFX(SFXInterface.Instance.EnemySFX);
         OnAnimateAttack.Invoke();
     }
 
     public IEnumerator DoTurn()
     {
-        if(NextTarget != null)
+        if (NextTarget != null)
             PerformAttack(NextTarget);
-        while (!TurnComplete)
-        {
-            yield return null;
-        }
+        while (!TurnComplete) yield return null;
 
         var elapsedTime = 0f;
         while (elapsedTime < .5f)
@@ -79,8 +74,9 @@ public class BaseEnemyAI : MonoBehaviour
             yield return null;
             elapsedTime += Time.deltaTime;
         }
-            var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
-        NextTarget = livingCharacters.Any() ? livingCharacters[Random.Range(0, livingCharacters.Count)]: null;
+
+        var livingCharacters = Characters.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();
+        NextTarget = livingCharacters.Any() ? livingCharacters[Random.Range(0, livingCharacters.Count)] : null;
         TurnSystem.StartNextTurn();
     }
 }

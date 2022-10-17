@@ -12,8 +12,6 @@ public class BattleTransitionSystem : MonoBehaviour
     public EntitySpawnSystem EntitySpawnSystem;
     public bool triggered;
 
-    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-
     public void Update()
     {
         if (EntitySpawnSystem.Characters.All(element => element.GetComponent<EntityHealth>().IsDead) && !triggered)
@@ -24,11 +22,17 @@ public class BattleTransitionSystem : MonoBehaviour
                         element.GetComponent<EntityHealth>().BaseHealth));
             triggered = true;
             AudioManager.Instance.PlayMusic(SFXInterface.Instance.GameMusic);
+            StatsStorage.instance.hermesHP = EntitySpawnSystem.Characters
+                .First(element => element.GetComponent<EntityHealth>().EntityName == "Hermes")
+                .GetComponent<EntityHealth>().CurrentHealth;
+            StatsStorage.instance.charonHP = EntitySpawnSystem.Characters
+                .First(element => element.GetComponent<EntityHealth>().EntityName == "Charon")
+                .GetComponent<EntityHealth>().CurrentHealth;
             OnEndBattle.Invoke(false);
         }
 
 
-        else if (EntitySpawnSystem.Enemies.All(element => element.GetComponent<EntityHealth>().IsDead)&& !triggered)
+        else if (EntitySpawnSystem.Enemies.All(element => element.GetComponent<EntityHealth>().IsDead) && !triggered)
         {
             EntitySpawnSystem.Characters.ForEach(element =>
                 EntitySpawnSystem.BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName] =
@@ -38,6 +42,11 @@ public class BattleTransitionSystem : MonoBehaviour
             AudioManager.Instance.PlayMusic(SFXInterface.Instance.GameMusic);
             OnEndBattle.Invoke(true);
         }
+    }
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
     }
 
     public void CheckForBattleEnd(GameObject deadTarget)

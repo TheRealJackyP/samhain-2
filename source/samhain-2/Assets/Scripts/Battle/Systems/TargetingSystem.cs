@@ -24,10 +24,10 @@ public class TargetingSystem : MonoBehaviour
                     ActiveTurn.GetComponent<Animator>().SetTrigger("Attack");
                     AudioManager.Instance.PlaySFX(SFXInterface.Instance.ShootSFX);
                 }
-                    
         }
 
-        else if ((Input.GetMouseButtonDown(1) && ActiveCard != null) || (Input.GetMouseButtonDown(0) && ActiveCard != null && ActiveTarget == null))
+        else if ((Input.GetMouseButtonDown(1) && ActiveCard != null) ||
+                 (Input.GetMouseButtonDown(0) && ActiveCard != null && ActiveTarget == null))
         {
             OnTargetUnClicked.Invoke(ActiveCard);
             ActiveTurn.GetComponent<CharacterDeck>().ReOrderHand();

@@ -49,7 +49,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         else
             m_DraggingPlane = canvas.transform as RectTransform;
 
-        if(MoveToOriginalInstance == null)
+        if (MoveToOriginalInstance == null)
             SetDraggedPosition(eventData);
     }
 
@@ -64,7 +64,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             return;
         }
 
-        if(MoveToOriginalInstance == null)
+        if (MoveToOriginalInstance == null)
             SetDraggedPosition(data);
     }
 
@@ -76,7 +76,8 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         var card = GetComponent<Card>();
         if (card is UntargetedCard)
         {
-            if (GetComponent<RectTransform>().transform.localPosition.y <= 250f || !card.TryPlayCard(card.gameObject, TargetingSystem.ActiveTurn, TargetingSystem.ActiveTurn))
+            if (GetComponent<RectTransform>().transform.localPosition.y <= 250f || !card.TryPlayCard(card.gameObject,
+                    TargetingSystem.ActiveTurn, TargetingSystem.ActiveTurn))
             {
                 if (MoveToOriginalInstance is not null)
                     StopCoroutine(MoveToOriginalInstance);
@@ -91,7 +92,8 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
         if (card is TargetedCard targetedCard)
         {
-            if (GetComponent<RectTransform>().transform.localPosition.y <= 250f || !targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn) )
+            if (GetComponent<RectTransform>().transform.localPosition.y <= 250f ||
+                !targetedCard.TryPlayCard(card.gameObject, TargetingSystem.ActiveTarget, TargetingSystem.ActiveTurn))
             {
                 if (MoveToOriginalInstance is not null)
                     StopCoroutine(MoveToOriginalInstance);
@@ -130,7 +132,8 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         if (MoveToOriginalInstance is not null)
             StopCoroutine(MoveToOriginalInstance);
 
-        MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(HandAnchor.GetComponent<RectTransform>(), false, stopHover));
+        MoveToOriginalInstance =
+            StartCoroutine(LerpToTargetPosition(HandAnchor.GetComponent<RectTransform>(), false, stopHover));
         DragTarget = null;
     }
 
@@ -147,10 +150,10 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         if (MoveToOriginalInstance is not null)
             StopCoroutine(MoveToOriginalInstance);
 
-        MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(HandAnchor.GetComponent<RectTransform>(), false));
+        MoveToOriginalInstance = StartCoroutine(LerpToTargetPosition(HandAnchor.GetComponent<RectTransform>()));
     }
 
-    public IEnumerator LerpToTargetPosition(RectTransform target, bool hover = false, bool disableHover= false)
+    public IEnumerator LerpToTargetPosition(RectTransform target, bool hover = false, bool disableHover = false)
     {
         var rect = GetComponent<RectTransform>();
         var elapsedTime = 0f;
@@ -163,7 +166,8 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                 Mathf.Abs(Quaternion.Angle(target.rotation, rect.rotation)) > .01f) && elapsedTime < DropTimeout)
         {
             rect.transform.position =
-                Vector3.MoveTowards(rect.transform.position, transformPosition, LerpSpeed * Time.deltaTime * (hover ? .5f : 1));
+                Vector3.MoveTowards(rect.transform.position, transformPosition,
+                    LerpSpeed * Time.deltaTime * (hover ? .5f : 1));
 
             rect.rotation = Quaternion.RotateTowards(rect.rotation, target.rotation, RotateSpeed * Time.deltaTime);
             elapsedTime += Time.deltaTime;
@@ -179,7 +183,8 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     private void SetDraggedPosition(PointerEventData data)
     {
-        if (dragOnSurfaces && data.pointerEnter != null && data.pointerEnter.transform as RectTransform != null && data.pressEventCamera != null)
+        if (dragOnSurfaces && data.pointerEnter != null && data.pointerEnter.transform as RectTransform != null &&
+            data.pressEventCamera != null)
             m_DraggingPlane = data.pointerEnter.transform as RectTransform;
 
         var rt = GetComponent<RectTransform>();

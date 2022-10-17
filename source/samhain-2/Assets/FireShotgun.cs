@@ -17,7 +17,7 @@ public class FireShotgun : MonoBehaviour
         if (!shells.Any())
             return;
         
-        GetComponent<Animator>().SetTrigger("Attack");
+        // GetComponent<Animator>().SetTrigger("Attack");
         shells.Sort(((o, o1) => o.GetComponent<Card>().SecondaryIntData - o1.GetComponent<Card>().SecondaryIntData));
         var totalDamage =shells[0].GetComponent<Card>().SecondaryIntData;
         
@@ -25,11 +25,15 @@ public class FireShotgun : MonoBehaviour
         {
             totalDamage += shells[1].GetComponent<Card>().SecondaryIntData;
             OnDischargeCard.Invoke(shells[0], shells[1]);
+            
+            // AudioManager.Instance.PlaySFX(SFXInterface.Instance.ShootSFX);
         }
 
         else
         {
             OnDischargeCard.Invoke(shells[0], null);
+            
+            // AudioManager.Instance.PlaySFX(SFXInterface.Instance.ShootSFX);
         }
         
         var livingEnemies = SpawnSystem.Enemies.Where(element => !element.GetComponent<EntityHealth>().IsDead).ToList();

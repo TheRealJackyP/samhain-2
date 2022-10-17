@@ -16,7 +16,7 @@ public class Card : MonoBehaviour
     public int IntData;
     public int SecondaryIntData;
     public string CardName;
-    
+
 
     public bool PlayerAnimationComplete;
     public bool CardAnimationComplete;
@@ -49,10 +49,7 @@ public class Card : MonoBehaviour
             return false;
         }
 
-        if (cardData is UntargetedCard)
-        {
-            AudioManager.Instance.PlaySFX(SFXInterface.Instance.ArmorSFX);
-        }
+        if (cardData is UntargetedCard) AudioManager.Instance.PlaySFX(SFXInterface.Instance.ArmorSFX);
         playerMana.CurrentMana -= cardData.Cost;
         OnPlayCard.Invoke(card, target, player);
         OnStartPlayerAnimation.Invoke(card, target, player);

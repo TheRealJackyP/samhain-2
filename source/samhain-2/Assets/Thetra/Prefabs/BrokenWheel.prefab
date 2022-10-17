@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Repair the wheel, we need the carriagefor the journey.
+      value: Repair the wheel, we will need the carriage for the journey.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -113,9 +113,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: Your journey leads you across rivers and mountains, there are  no roads,
-        just a hint of where to go. When you wander over a rocky path one of the
-        carriages wheel is breaking down. What will you do?
+      value: Your journey leads you across rivers and mountains, there are no other
+        roads, only The Trail. As you pass over a rocky path a carriage wheel breaks.
+        What will you do?
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
@@ -123,18 +123,17 @@ PrefabInstance:
       objectReference: {fileID: 1713539878, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
-      value: The broken wheel
+      value: The Broken Wheel
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: You take the time to repair the wheel, the ghosts are very thankfull.
-        Hermes gains 3 HP;
+      value: You take the time to repair the wheel, the ghosts share some of their
+        essence with Hermes as thanks. Hermes gains 3 HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: You leave the carriage behind, the Ghosts which have to follow you are
-        getting slower and some of them can't keep up with you anymore. Charon loose
-        3 HP!
+      value: You leave the carriage behind. Charon has to spend more time watching
+        over the ghosts. Charon loses 3 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
@@ -146,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0004a8bde0565b54696e990af51de889, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: We leave the carriage behind, gather all the stuff and follow us.
+      value: We leave the carriage behind, favoring speed over caution.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

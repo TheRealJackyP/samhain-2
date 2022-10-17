@@ -43,6 +43,16 @@ public class CharacterDeck : MonoBehaviour
             Initialize();
     }
 
+    private void OnDestroy()
+    {
+        OnDrawFailed.RemoveAllListeners();
+        OnDrawSuccess.RemoveAllListeners();
+        OnShuffleDeck.RemoveAllListeners();
+        OnShuffleDeckAnimationComplete.RemoveAllListeners();
+        OnDiscardCard.RemoveAllListeners();
+        OnStartEndOfTurnDiscard.RemoveAllListeners();
+    }
+
     public void Initialize()
     {
         if (!Initalized)
@@ -55,23 +65,11 @@ public class CharacterDeck : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        OnDrawFailed.RemoveAllListeners();
-        OnDrawSuccess.RemoveAllListeners();
-        OnShuffleDeck.RemoveAllListeners();
-        OnShuffleDeckAnimationComplete.RemoveAllListeners();
-        OnDiscardCard.RemoveAllListeners();
-        OnStartEndOfTurnDiscard.RemoveAllListeners();
-    }
-
     public void ReOrderHand()
     {
-        Hand.Sort(((anchor, handAnchor) => Mathf.RoundToInt(anchor.transform.localPosition.x - handAnchor.transform.localPosition.x)));
-        foreach (var i in Enumerable.Range(0, Hand.Count))
-        {
-            Hand[i].transform.SetAsLastSibling();
-        }
+        Hand.Sort((anchor, handAnchor) =>
+            Mathf.RoundToInt(anchor.transform.localPosition.x - handAnchor.transform.localPosition.x));
+        foreach (var i in Enumerable.Range(0, Hand.Count)) Hand[i].transform.SetAsLastSibling();
     }
 
     public bool DrawCard()
@@ -93,6 +91,7 @@ public class CharacterDeck : MonoBehaviour
             nextCard.transform.localScale = Vector3.one;
             nextCard.gameObject.SetActive(true);
             AudioManager.Instance.PlaySFX(SFXInterface.Instance.DrawSFX);
+            if (nextCard.TryGetComponent<TargetedCard>(out var card)) card.ResetShellImage();
             return true;
         }
 
@@ -140,8 +139,69 @@ public class CharacterDeck : MonoBehaviour
         if (endingTurn != gameObject)
             return;
 
+        if (endingTurn.GetComponent<EntityHealth>().EntityName == "Hermes")
+        {
+            StartCoroutine(WaitToDiscard());
+        }
+        else
+        {
+            AudioManager.Instance.PlaySFX(SFXInterface.Instance.DiscardSFX);
+            OnStartEndOfTurnDiscard.Invoke(gameObject);
+            DiscardAll(true);
+        }
+    }
+
+    public IEnumerator WaitToDiscard()
+    {
+        var elapsedTime = 0f;
+
+        var shells = Hand.Where(element => element.GetComponent<Card>().SecondaryIntData > 0).ToList();
+        if (shells.Any())
+        {
+            shells.Sort((o, o1) => o.GetComponent<Card>().SecondaryIntData - o1.GetComponent<Card>().SecondaryIntData);
+
+            if (shells.Count >= 2)
+            {
+                shells[0].GetComponent<TargetedCard>().MoveToGun(null);
+                shells[1].GetComponent<TargetedCard>().MoveToGun(null);
+            }
+
+            else
+            {
+                shells[0].GetComponent<TargetedCard>().MoveToGun(null);
+            }
+
+            while (elapsedTime <= 1.1f)
+            {
+                yield return null;
+                elapsedTime += Time.deltaTime;
+            }
+
+            elapsedTime = 0;
+            GetComponent<Animator>().SetTrigger("Shotgun");
+            AudioManager.Instance.PlaySFX(SFXInterface.Instance.ShootSFX);
+
+            // while (elapsedTime <= 1.5f)
+            // {
+            //     yield return null;
+            //     elapsedTime += Time.deltaTime;
+            // }
+        }
+        else
+        {
+            yield return null;
+        }
+
+
+        // while (elapsedTime <= 1.5f)
+        // {
+        //     yield return null;
+        //     elapsedTime += Time.deltaTime;
+        // }
+
         AudioManager.Instance.PlaySFX(SFXInterface.Instance.DiscardSFX);
         OnStartEndOfTurnDiscard.Invoke(gameObject);
+        GetComponent<FireShotgun>().SpawnSystem.TurnSystem.OnTurnStartAnimationComplete.Invoke();
         DiscardAll(true);
     }
 

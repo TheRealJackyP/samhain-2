@@ -72,8 +72,8 @@ public class EntityHealth : MonoBehaviour
         {
             CurrentHealth = Math.Clamp(CurrentHealth - unblocked, 0, BaseHealth);
         }
-        
-        if(amount > 0)
+
+        if (amount > 0)
             OnTakeDamage.Invoke(gameObject);
     }
 

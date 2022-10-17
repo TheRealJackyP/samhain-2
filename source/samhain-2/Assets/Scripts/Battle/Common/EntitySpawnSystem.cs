@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using CharacterActions =
@@ -25,17 +23,17 @@ public class EntitySpawnSystem : MonoBehaviour
     public TurnSystem TurnSystem;
     public GameObject HandParent;
     public BattleTransitionSystem BattleTransitionSystem;
+    public HandAnchorPositioningSystem HandAnchorPositioningSystem;
 
     private List<CharacterActions> characterActions = new();
     private List<UnityAction<GameObject, GameObject>> enemyActions = new();
-    public HandAnchorPositioningSystem HandAnchorPositioningSystem;
 
     private void Start()
     {
         PopulateBattleDirectives();
         Characters = BattleDirectives.Characters.ToList()
             .Select(element => Instantiate(element, CharacterParentObject.transform)).ToList();
-       
+
         // Characters.ForEach(element =>
         //     element.GetComponent<EntityHealth>().IsDead = element.GetComponent<EntityHealth>()._currentHealth <= 0);
         Enemies = BattleDirectives.Enemies.ToList().Select(element => Instantiate(element, EnemyParentObject.transform))
@@ -67,6 +65,10 @@ public class EntitySpawnSystem : MonoBehaviour
         Characters.ForEach(element =>
             element.GetComponent<EntityHealth>().CurrentHealth =
                 BattleDirectives.CharacterHealth[element.GetComponent<EntityHealth>().EntityName]);
+        Characters.First(element => element.GetComponent<EntityHealth>().EntityName == "Hermes")
+            .GetComponent<EntityHealth>().CurrentHealth = StatsStorage.instance.hermesHP;
+        Characters.First(element => element.GetComponent<EntityHealth>().EntityName == "Charon")
+            .GetComponent<EntityHealth>().CurrentHealth = StatsStorage.instance.charonHP;
         Enemies.ForEach(element => element.GetComponent<BaseEnemyAI>().TurnSystem = TurnSystem);
         AudioManager.Instance.PlayMusic(SFXInterface.Instance.BattleMusic);
     }

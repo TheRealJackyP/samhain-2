@@ -1860,6 +1860,28 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
+      propertyPath: EventText
+      value: The sun burns down on the group of ghosts gathered behind you. You two,
+        Hermes and Charon, prepare to guide them through the desert. As usual, the
+        Trail presents you with a choice of how to proceed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
+      propertyPath: EventTitle
+      value: Setting Off on the Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
+      propertyPath: ChoiceText.Array.data[0]
+      value: You choose to take the faster route, making it more difficult for the
+        ghosts to follow. Charon has to circle back and gather them, lest they be
+        doomed to wander the desert forever. Charon lost 5 HP!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175011379550617629, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
+      propertyPath: ChoiceText.Array.data[1]
+      value: You choose the safer route and wait for the slower ghosts. Hermes grows
+        bored and begins to nod off, causing her to fall off the wagon. Hermes loose
+        5 HP!
+      objectReference: {fileID: 0}
     - target: {fileID: 8175011379711919755, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
       propertyPath: m_RootOrder
       value: 14
