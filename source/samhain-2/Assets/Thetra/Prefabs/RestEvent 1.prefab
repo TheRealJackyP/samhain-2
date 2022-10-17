@@ -231,7 +231,7 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
       value: You can hear the cries of coyotes in the night. Charon has to make extra
-        rounds to protect the convoy. Charon loose 2HP.
+        rounds to protect the convoy. Charon loses 2HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]

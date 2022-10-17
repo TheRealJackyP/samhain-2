@@ -133,7 +133,7 @@ PrefabInstance:
       propertyPath: ChoiceText.Array.data[0]
       value: While Charon repairs the wheel, Hermes carelessly lets some of the ghosts
         wander off. She spends the rest of the afternoon rounding them up. Hermes
-        loose 3 HP!
+        loses 3 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]

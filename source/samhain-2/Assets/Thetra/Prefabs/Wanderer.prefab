@@ -203,8 +203,8 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: You let them join your group. They what little of their extra essence
-        remains with you. Hermes and Charon gain 3 HP.
+      value: You let them join your group. They share what little of their extra
+        essence remains with you. Hermes and Charon gain 3 HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
