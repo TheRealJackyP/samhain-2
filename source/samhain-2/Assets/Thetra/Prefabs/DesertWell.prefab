@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1236143013734010737, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 3
@@ -99,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DesertWell
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8575a95a7349ca3409ec0fe06ae8c2c7, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
       value: In the dry heat of the desert a ghost cries out and points towards something
@@ -108,11 +116,15 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 389486419, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
+      objectReference: {fileID: 21300000, guid: 8575a95a7349ca3409ec0fe06ae8c2c7, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
       value: A Well in the Middle of Nowhere
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: EventImageBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cb1931faaf973f49abc505814f121af, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
       value: The bucket hits the ground with a sploosh.  When you pull it back up
@@ -127,15 +139,47 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 7f533ca4ed8c87b40a69e7612f2d8984, type: 3}
+      objectReference: {fileID: 21300000, guid: 8575a95a7349ca3409ec0fe06ae8c2c7, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: fea1dab523800bb408e82d4608007553, type: 3}
+      objectReference: {fileID: 21300000, guid: 8575a95a7349ca3409ec0fe06ae8c2c7, type: 3}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cb1931faaf973f49abc505814f121af, type: 3}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cb1931faaf973f49abc505814f121af, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
       value: We don't take water from the well but take a look inside.
       objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cb1931faaf973f49abc505814f121af, type: 3}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 0.46257564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46257564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc0c0828d94b7584f9b70eb3e723f238, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
 --- !u!114 &2215129245051416978 stripped

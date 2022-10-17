@@ -361,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1820683925, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: m_text
-      value: Gain 5 armor
+      value: Gain 3 armor
       objectReference: {fileID: 0}
     - target: {fileID: 1820683925, guid: cd83eb3eef3ca4b4f941c05715361061, type: 3}
       propertyPath: m_fontSize

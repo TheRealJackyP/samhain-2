@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1236143013734010737, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 3
@@ -99,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wanderer2
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 314b506a4a0d2d14d94176c4789fe91e, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
       value: You meet some wandering souls in the desert. Suspicious, since only
@@ -108,11 +116,15 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 21300000, guid: 8d284e01babc47d4da8ccdb029f69cc9, type: 3}
+      objectReference: {fileID: 21300000, guid: 314b506a4a0d2d14d94176c4789fe91e, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
       value: Wandering Souls
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: EventImageBack
+      value: 
+      objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
       value: You let them join your group. Suddenly you hear some noises from behind,
@@ -135,6 +147,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Charon refuses to help these suspicious spirits.
       objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9855346
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4575472
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc0c0828d94b7584f9b70eb3e723f238, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
 --- !u!114 &3453234200280366736 stripped

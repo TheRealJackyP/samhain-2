@@ -3140,5 +3140,5 @@ MonoBehaviour:
   DrawSFX: {fileID: 8300000, guid: d6edd1d1a0deb8d47b039b875e430063, type: 3}
   DiscardSFX: {fileID: 8300000, guid: 47941ef030feab04183df7e833fd88da, type: 3}
   EnemySFX: {fileID: 8300000, guid: 2a3d8201cc23bdb40b94fed77e07d6bb, type: 3}
-  BattleMusic: {fileID: 8300000, guid: 19ccc1131ef164a48bca81f358ccf744, type: 3}
-  GameMusic: {fileID: 8300000, guid: 898d7a834832cea4183a4ae5abdb725e, type: 3}
+  BattleMusic: {fileID: 8300000, guid: 94cb0b0a1f14c87428a4faa750994bcb, type: 3}
+  GameMusic: {fileID: 8300000, guid: e302282a02f9ac84ebb1e4f3ac969e35, type: 3}

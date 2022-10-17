@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,13 +10,16 @@ public class Dialog : MonoBehaviour
     public GameObject StoryEventOB;
     public TextMeshProUGUI StoryTextBox, TitleBox;
     public Image EventImageBox;
+    public Image EventImageBackBox;
     public string EventTitle;
     [TextArea]
     public string EventText;
     string curText;
     public Sprite EventImage;
+    public Sprite EventImageBack;
     public string[] ChoiceText;
     public Sprite[] ChoiceImage;
+    public Sprite[] ChoiceBackImage;
     [Range(1,10)]
     public float typingSpeed = 5;
     private float typeSpeed;
@@ -28,8 +32,6 @@ public class Dialog : MonoBehaviour
 
     void Start()
     {
-
-
         StoryTextBox.text = "";
 
         EndButton.SetActive(false);
@@ -38,6 +40,14 @@ public class Dialog : MonoBehaviour
         StartCoroutine(Type(EventText));
         TitleBox.text = EventTitle;
         EventImageBox.sprite = EventImage;
+        if (EventImageBackBox != null && EventImageBack != null)
+        {
+            EventImageBackBox.sprite = EventImageBack;
+        }
+        else
+        {
+            EventImageBackBox.enabled = false;
+        }
     }
     private void Update()
     {
@@ -95,6 +105,14 @@ public class Dialog : MonoBehaviour
         StoryTextBox.text = "";
         StartCoroutine(Type(ChoiceText[choiceID]));
         EventImageBox.sprite = ChoiceImage[choiceID];
+        if (EventImageBackBox != null && choiceID < ChoiceImage.Count())
+        {
+            EventImageBackBox.sprite = ChoiceBackImage[choiceID];
+        }
+        else
+        {
+            EventImageBackBox = null;
+        }
         Destroy(ChoiceButtons);
     }
 

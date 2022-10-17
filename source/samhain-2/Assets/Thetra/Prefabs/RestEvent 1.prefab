@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1236143013734010737, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -199,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RestEvent 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 616f68aac15d65f4cb3414ad10c5bfde, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
       value: You bring the carriage to a halt and get out to rest. Who will take
@@ -207,11 +215,15 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 21300000, guid: 616f68aac15d65f4cb3414ad10c5bfde, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
       value: Taking a Rest
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: EventImageBack
+      value: 
+      objectReference: {fileID: 21300000, guid: d8274af73fa584a468ed762d970ae304, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
       value: The night passes uneventfully.
@@ -224,14 +236,58 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: 1592181711, guid: 788e0de04a2aa774a87b98dcaa75c285, type: 3}
+      objectReference: {fileID: 21300000, guid: 616f68aac15d65f4cb3414ad10c5bfde, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[1]
       value: 
-      objectReference: {fileID: -2046402877, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
+      objectReference: {fileID: 21300000, guid: 616f68aac15d65f4cb3414ad10c5bfde, type: 3}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: d8274af73fa584a468ed762d970ae304, type: 3}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: d8274af73fa584a468ed762d970ae304, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
       value: Charon will take the night watch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d8274af73fa584a468ed762d970ae304, type: 3}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6399964
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.g
+      value: 0.790948
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc0c0828d94b7584f9b70eb3e723f238, type: 3}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5317883
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5154415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

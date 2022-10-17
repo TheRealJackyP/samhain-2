@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1236143013734010737, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780528945850826876, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -163,6 +167,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wanderer
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 314b506a4a0d2d14d94176c4789fe91e, type: 3}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780528946853526850, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
       value: You meet some wandering souls in the desert. Suspicious, since only
@@ -172,11 +192,15 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
       value: 
-      objectReference: {fileID: 21300000, guid: 6fa38da4df84e5d4e89c6e98564b1483, type: 3}
+      objectReference: {fileID: 21300000, guid: 314b506a4a0d2d14d94176c4789fe91e, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventTitle
       value: Wandering Souls
       objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: EventImageBack
+      value: 
+      objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
       value: You let them join your group. They what little of their extra essence
@@ -190,14 +214,58 @@ PrefabInstance:
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
       value: 
-      objectReference: {fileID: -2046402877, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
+      objectReference: {fileID: 21300000, guid: 314b506a4a0d2d14d94176c4789fe91e, type: 3}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: fea1dab523800bb408e82d4608007553, type: 3}
+      objectReference: {fileID: 21300000, guid: 314b506a4a0d2d14d94176c4789fe91e, type: 3}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
+    - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: ChoiceBackImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
       value: Charon refuses to help these suspicious spirits.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb79f8769f9c8bb42acf7a977ad06f0c, type: 3}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9855346
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123189769946294059, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4575472
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc0c0828d94b7584f9b70eb3e723f238, type: 3}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899969154912083494, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
