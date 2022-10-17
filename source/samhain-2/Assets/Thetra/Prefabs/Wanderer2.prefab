@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: They can come along, give them food and let them rest in the wagon.
+      value: Hermes offers to guide them to the Underworld as well.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -101,8 +101,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: You meet some wandering souls in the desert. They tell you, that they
-        lost track of their group. They look exhausted.
+      value: You meet some wandering souls in the desert. Suspicious, since only
+        the most foolhardy and desperate of spirits would set out without your guidance.
+        They look exhausted.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
@@ -114,13 +115,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: You let them join your group. Suddenly you hear some noises in the back.
-        The wandering souls flee into the desert. Charon lost 2 HP.
+      value: You let them join your group. Suddenly you hear some noises from behind,
+        as the wandering souls attack your party. Charon singlehandedly fends them
+        off. Charon lost 2 HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: You wish them good luck on their journey. They thank you and send a 
-        prayer to you. Charon gain 2 HP.
+      value: You deny them. A few hours later, you find the  Charon gain 2 HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
@@ -132,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7f533ca4ed8c87b40a69e7612f2d8984, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: We wish you best of luck but we can't guide you.
+      value: Charon refuses to help these suspicious spirits.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

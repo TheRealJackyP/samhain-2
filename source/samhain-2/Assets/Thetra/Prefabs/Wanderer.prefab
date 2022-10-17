@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: They can come along, give them food and let them rest in the wagon.
+      value: Hermes offers to guide them to the Underworld as well.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -165,8 +165,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: You meet some wandering souls in the desert. They tell you, that they
-        lost track of their group. They look exhausted.
+      value: You meet some wandering souls in the desert. Suspicious, since only
+        the most foolhardy and desperate of spirits would set out without your guidance.
+        They look exhausted.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
@@ -178,14 +179,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: You let them join your group. Some food and water replenish their spirit
-        and they stay with you. Hermes and Charon gain 3 HP.
+      value: You let them join your group. They what little of their extra essence
+        remains with you. Hermes and Charon gain 3 HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: You wish them good luck on their journey. When you turn your self away
-        they suddenly attack. A fight among your party and the wandering souls emerges.
-        Charon and Hermes loose 3 ghosts!
+      value: You deny them, and wish them safe travels. When you turn to leave, they
+        suddenly attack, leading to a small fight. Charon and Hermes lose 3 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: fea1dab523800bb408e82d4608007553, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: We wish you best of luck but we can't guide you.
+      value: Charon refuses to help these suspicious spirits.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

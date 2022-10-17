@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Hermes will do the nightshift.
+      value: Hermes will take the night watch.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -201,7 +201,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: The carriage and you take a rest. Who is going to do the nightshift?
+      value: You bring the carriage to a halt and get out to rest. Who will take
+        first watch?
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
@@ -213,12 +214,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: The Night passes by without anything happening.
+      value: The night passes uneventfully.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: You can hear the coyots cry in the night. Some of the Ghosts get scared
-        and run of in to the night, never to be found again. Charon loose 2HP.
+      value: You can hear the cries of coyotes in the night. Charon has to make extra
+        rounds to protect the convoy. Charon loose 2HP.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceImage.Array.data[0]
@@ -230,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: -2046402877, guid: 480a2b66f5535484b9d9e881ffdc5837, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Charon will do the nightshift.
+      value: Charon will take the night watch.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}

@@ -1828,6 +1828,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8175011378124149571, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
+      propertyPath: m_text
+      value: Take the safer route.
+      objectReference: {fileID: 0}
     - target: {fileID: 8175011379479114045, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1929,6 +1933,10 @@ PrefabInstance:
     - target: {fileID: 8175011379711919764, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
       propertyPath: m_Name
       value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175011379806708595, guid: b9854805aea90ca42be258bd470a1b97, type: 3}
+      propertyPath: m_text
+      value: Take the faster route.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9854805aea90ca42be258bd470a1b97, type: 3}

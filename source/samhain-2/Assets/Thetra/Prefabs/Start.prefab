@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946580427315, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Hermes takes the lead, he will go fast and save food for the journey.
+      value: Take the faster route.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946754680779, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_RootOrder
@@ -149,9 +149,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventText
-      value: The heat of the sun is burning down on the group of ghosts gathered
-        behind you. You two, Hermes and Charon, guide them through the desert, they
-        longed to travel through. It's your choice, which way you choose.
+      value: The sun burns down on the group of ghosts gathered behind you. You two,
+        Hermes and Charon, prepare to guide them through the desert. As usual, the
+        Trail presents you with a choice of how to proceed.
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: EventImage
@@ -167,14 +167,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[0]
-      value: You choose to take the fast route, some of the ghosts feel repelled
-        by your desition and stay behind, doomed to wander the desert until the end
-        of eternety. Charon lost 5 HP!
+      value: You choose to take the faster route, making it more difficult for the
+        ghosts to follow. Charon has to circle back and gather them, lest they be
+        doomed to wander the desert forever. Charon lost 5 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: ChoiceText.Array.data[1]
-      value: You choose to be carefull and wait for the slower ghosts too. All the
-        ghosts stay by your side but you need more food on your travel. Hermes loose
+      value: You choose the safer route and wait for the slower ghosts. Hermes grows
+        bored and begins to nod off, causing her to fall off the wagon. Hermes loose
         5 HP!
       objectReference: {fileID: 0}
     - target: {fileID: 1780528946861420893, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
@@ -187,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8d4fb01052b994f4f888a6bc964b5858, type: 3}
     - target: {fileID: 1780528947277095427, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
       propertyPath: m_text
-      value: Charon takes the lead, he will go slower and protect everyone.
+      value: Take the safer route.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6e132a2cfba6e40addcc1eeda0f062, type: 3}
